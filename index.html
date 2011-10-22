@@ -1,11 +1,11 @@
 <!doctype>
 <html>
-  <head>
-    <title>Triple Dare - The Web's Messiest Challange!</title>
-    <!-- TODO: Normalize.css -->
-  </head>
-</html>
+<head>
+  <title>Triple Dare - The Web's Messiest Challange!</title>
+  <!-- TODO: Normalize.css -->
+</head>
 <body>
+<!-- TODO: Valid HTML and CSS via W3C (add to build chain if possible) -->
   <!-- TODO: Make fixed at top -->
   <!-- TODO: Give opacity -->
   <!-- TODO: Add hidable functionality -->
@@ -13,13 +13,14 @@
     <!-- TODO: Anchor properly -->
     <!-- TODO: Use correct fonts (degrade to sans-serif) -->
     <!-- TODO: Capitalize letters via CSS -->
-    <a href="#obstacles">Obstacles</a>
-    <a href="#prizes">Prizes</a>
-    <a href="#be_a_contestant">Be a contestant</a>
-    <a href="#top">Back to top</a>
+    <a href="#obstaclesSection">Obstacles</a>
+    <a href="#prizesSection">Prizes</a>
+    <a href="#contestantSection">Be a contestant</a>
+    <a href="#topSection">Back to top</a>
   </nav>
   <!-- TODO: Should this be <header>? -->
-  <section id="headerSection" class="mainSection">
+  <!-- TODO: Document media query large, medium, small, ultra small -->
+  <section id="topSection" class="mainSection">
   <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
   <!-- TODO: Add blue bg -->
     <!-- TODO: Wrap in SVG -->
@@ -28,20 +29,24 @@
     <h1>Triple Dare</h1>
     <!-- TODO: Replace ' with & character -->
     <!-- TODO: Capitalize letters via CSS -->
+    <!-- TODO: CSS Drop shadow -->
     <h2>The Web's messiest challenge!</h2>
     <span>Airing Thursdays on the Knucklelodeon Network</span>
   <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
   </section>
-  <section id="obstacleSection" class="mainSection">
+  <section id="obstaclesSection" class="mainSection">
   <!-- TODO: Use (selector):after OR box-shadow? for top darkening -->
   <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
     <!-- TODO: Is h2 legal here? -->
     <!-- TODO: (selector):after Checkboard -->
     <!-- TODO: Try to do the checkboard via CSS gradients? -->
+    <!-- TODO: CSS Drop shadow text -->
     <h2>Obstacles</h2>
     <!-- TODO: Wrap buttons in nav? -->
     <!-- TODO: Is section appropriate or should it be div? -->
-    <!-- TODO: Should take up half only when media query allows for it -->
+    <!-- TODO: Media query large: 3x2 vertical + aside -->
+    <!-- TODO: Media query small: 3x2 vertical, no aside -->
+    <!-- TODO: Media query ultra small: 6x1 vertical, no aside -->
     <section>
       <!-- TODO: Put in SVG/image fallback for each button -->
       <!-- TODO: Image fallbacks should be in PNG sprite -->
@@ -60,7 +65,8 @@
       <figure>
       <!-- TODO: Capitalize via CSS -->
       <!-- TODO: CSS transform rotate -->
-      <!-- TODO: TODO: Figure out how to do backdrop (probably just an image; same as h1) (ideal for SVG) -->
+      <!-- TODO: Figure out how to do backdrop (probably just an image; same as h1) (ideal for SVG) -->
+      <!-- TODO: CSS Drop shadow text -->
       <figcaption>Down the hatch<br/>6ft slide covered in gunk!</figcaption>
       <!-- TODO: Insert default image here -->
       <img src="" alt=""/>
@@ -68,4 +74,144 @@
     </section>
   <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
   </section>
+  <section id="prizesSection" class="mainSection">
+  <!-- TODO: Use (selector):after OR box-shadow? for top darkening -->
+  <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
+    <!-- TODO: Is h2 legal here? -->
+    <!-- TODO: (selector):after Checkboard -->
+    <!-- TODO: Try to do the checkboard via CSS gradients? -->
+    <h2>Obstacles</h2>
+    <!-- TODO: Is section appropriate or should it be div? -->
+    <!-- TODO: Media query large: 2x2 normal -->
+    <!-- TODO: Media query small: 4x1 normal -->
+    <!-- TODO: Media query ultra small: 4x1 smaller images -->
+    <section>
+      <!-- TODO: Make a lightbox for each figure? OR Link to somewhere -->
+      <!-- TODO: Use SVG with fallback images (this will require 2 sheets for different media sizes) -->
+      <figure>
+        <!-- TODO: Insert spacecamp image here -->
+        <!-- TODO: CSS box-shadow (cross-browser) -->
+        <img src="" alt="A trip to Space Camp!"/>
+        <!-- TODO: Capitalize letters via CSS -->
+        <figcaption>A trip to Space Camp!</figcaption>
+      </figure>
+      <figure>
+        <!-- TODO: Insert casio image here -->
+        <!-- TODO: CSS box-shadow (cross-browser) -->
+        <img src="" alt="A Casio Rapman keyboard!"/>
+        <!-- TODO: Capitalize letters via CSS -->
+        <figcaption>A Casio Rapman keyboard!</figcaption>
+      </figure>
+    </section>
+    <section>
+      <figure>
+        <!-- TODO: Insert nash skateboard image here -->
+        <!-- TODO: CSS box-shadow (cross-browser) -->
+        <img src="" alt="A Nash skateboard!"/>
+        <!-- TODO: Capitalize letters via CSS -->
+        <figcaption>A Nash skateboard!</figcaption>
+      </figure>
+      <figure>
+        <!-- TODO: Insert tv image here -->
+        <!-- TODO: CSS box-shadow (cross-browser) -->
+        <img src="" alt="A 13 inch TV/VCR combo!"/>
+        <!-- TODO: Capitalize letters via CSS -->
+        <figcaption>A 13 inch TV/VCR combo!</figcaption>
+      </figure>
+    </section>
+  <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
+  </section>
+  <section id="contestantSection" class="mainSection">
+  <!-- TODO: Use (selector):after OR box-shadow? for top darkening -->
+  <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
+    <!-- TODO: Is h2 legal here? -->
+    <!-- TODO: (selector):after Checkboard -->
+    <!-- TODO: Try to do the checkboard via CSS gradients? -->
+    <!-- TODO: CSS Drop shadow text -->
+    <h2>Be a Contestant</h2>
+    <!-- TODO: Should we be nesting fieldset inside of section? -->
+    <!-- TODO: Media query large: Normal + aside -->
+    <!-- TODO: Media query small: Normal + no-aside -->
+    <!-- TODO: Media query ultra small: Line break for select boxes, everything else thinner + no-aside -->
+    <section>
+      <fieldset>
+        <!-- TODO: Should text be default text be inside or outside (FOUT) -->
+        <!-- TODO: CSS Coloring -->
+        <!-- TODO: CSS Capitalize -->
+        <!-- TODO: All inputs must have non-default value (except photo url?) -->
+        <!-- TODO: Use outline: red for erroring and maybe red bubble too -->
+        <input type="text" value="Your Name" default="Your Name"/>
+        <input type="text" value="Email Address" default="Email Address"/>
+        <input type="text" value="Team Name" default="Team Name"/>
+        <!-- TODO: Div is the right element here? -->
+        <div>
+          <!-- TODO: I think I saw this style of dropdown on CSS Tricks -->
+          <select default="Team Color">
+            <!-- TODO: Disallow this as default submit option -->
+            <!-- TODO: Did they ever have any other team colors? -->
+            <option selected="selected">Team Color</option>
+            <option>Red</option>
+            <option>Blue</option>
+          </select>
+          <select default="Gender">
+            <option selected="selected">Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+        <input type="text" value="Profile Photo URL" default="Profile Photo URL"/>
+        <!-- TODO: Add background image SVG/PNG fallback -->
+        <!-- TODO: CSS Transform on text -->
+        <!-- TODO: CSS Drop shadow on text -->
+        <button>Submit Entry!</button>
+      </fieldset>
+    </section>
+    <!-- TODO: Aside is legitimate here? -->
+    <aside>
+      <figure>
+        <!-- TODO: Use SVG and fallback to PNG -->
+        <!-- TODO: Insert clock background -->
+        <!-- TODO: Is there a better element for here? -->
+        <!-- TODO: CSS Drop shadow on text -->
+        <span id="contestantTimer" class="timer">60</span>
+        <figcaption>
+          <!-- TODO: CSS Capitalize -->
+          <!-- TODO: CSS Drop shadow text -->
+          The clock is ticking!
+        </figcaption>
+      </figure>
+    </aside>
+  </section>
+  <!-- TODO: Media query large: Normal -->
+  <!-- TODO: Media query small: Addresses and paragraphs center and break between -->
+  <!-- TODO: Media query ultra small: Same story as small -->
+  <footer>
+  <!-- TODO: Wrap inner content -->
+    <!-- TODO: Will this work as shown? -->
+    <!-- TODO: Backdrop with image -->
+    <hr>KN</hr>
+    <section>
+      <h3>The Knucklelodeon Network</h3>
+      <!-- TODO: Div's or section's? -->
+      <!-- TODO: Handle line breaks? -->
+      <section>The Knucklelodeon Network is not affiliated with Nickelodeon, nor is it an actual television network</section>
+      <section>Triple Dare contestants consent to potential physical bodily harm, like being burried alive by a giant waffle.</section>
+    </section>
+    <section>
+      <h3>Visit Our Studios</h3>
+      <!-- TODO: Div's or section's? -->
+      <address>11 Slime Time Way<br/>Sacramento, CA 94203</address>
+      <address>329 Gunk Road<br/>Jacksonville, FL 32099</address>
+    </section>
+    <hr></hr>
+    <section>
+      This design is licensed under a <cite>Creative Commons Attribution-NonCommercial-NoDerivs 3.0 License</cite>
+      <br/>
+      <!-- TODO: Insert CC image (local-hosted only) [put in sprite sheet] -->
+      <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img src="" alt="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 License"/></a>
+    </section>
+  </footer>
+  <!-- TODO: If the checkerboard:after doesn't work, try fieldset + legend -->
+  <!-- TODO: Make sure CSS capitalization works in lower IEs? -->
 </body>
+</html>
