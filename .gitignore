@@ -1,2 +1,6 @@
 
 /resources
+/node_modules
+/nodemonw.exe
+/app.js
+/public/js/reload_with_collector.js
