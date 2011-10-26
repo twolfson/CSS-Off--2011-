@@ -2,77 +2,87 @@
 <html>
 <head>
   <title>Triple Dare - The Web's Messiest Challange!</title>
-  <!-- TODO: Normalize.css -->
+  <link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Open+Sans:600" />
+  <!-- TODO: Compress and minify all CSS to one sheet -->
+  <!-- TODO: Same story for JS -->
+  <!-- TODO: Take only what you need from Normalize.css -->
+	<link rel="stylesheet" type="text/css" media="all" href="public/normalize.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="public/index.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="public/debug.css"/>
+
   <!-- TODO: Remove from prod -->
-  <script src="public/js/reload_with_collector.js"></script>
+  <script src="public/reload_with_collector.js"></script>
 </head>
 <body>
 <!-- TODO: Valid HTML and CSS via W3C (add to build chain if possible) -->
   <!-- TODO: Make fixed at top -->
   <!-- TODO: Give opacity -->
   <!-- TODO: Add hidable functionality -->
-  <nav id="navBar" class="navigation">
-    <!-- TODO: Anchor properly -->
+  <nav id="navBar" class="navigation" role="mainPage">
     <!-- TODO: Use correct fonts (degrade to sans-serif) -->
-    <!-- TODO: Capitalize letters via CSS -->
-    <a href="#obstaclesSection">Obstacles</a>
-    <a href="#prizesSection">Prizes</a>
-    <a href="#contestantSection">Be a contestant</a>
-    <a href="#topSection">Back to top</a>
+    <!-- TODO: Should I Capitalize via CSS or inline -->
+    <a href="#obstaclesSection" class="link">Obstacles</a>
+    <a href="#prizesSection" class="link">Prizes</a>
+    <a href="#contestantSection" class="link">Be a contestant</a>
+    <a href="#topSection" class="link">Back to top</a>
   </nav>
-  <!-- TODO: Should this be <header>? -->
   <!-- TODO: Document media query large, medium, small, ultra small -->
-  <section id="topSection" class="mainSection">
+  <header id="topSection" class="mainSection">
   <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
-  <!-- TODO: Add blue bg -->
-    <!-- TODO: Wrap in SVG -->
-    <!-- TODO: Fallback with image -->
-    <!-- TODO: Should this be an hgroup? -->
-    <h1>Triple Dare</h1>
-    <!-- TODO: Replace ' with & character -->
-    <!-- TODO: Capitalize letters via CSS -->
-    <!-- TODO: CSS Drop shadow -->
-    <h2>The Web's messiest challenge!</h2>
-    <span>Airing Thursdays on the Knucklelodeon Network</span>
+    <!-- TODO: Should this be a div or a section? [I think div] -->
+    <section class="mainContent">
+      <!-- TODO: Placeholder for navBar -->
+      <div id="navBarPlaceholder">&nbsp;</div>
+      <!-- TODO: Wrap in SVG -->
+      <!-- TODO: Fallback with image -->
+      <!-- TODO: Re-id these better -->
+      <hgroup>
+        <h1 id="tripleDare">Triple Dare</h1>
+        <!-- TODO: Should this be capitalized via CSS or not? -->
+        <h2 id="messiestChallenge" class="komikaText subheader" title="The Web's messiest challenge!">The Web&#39;s messiest challenge!</h2>
+        <h3 id="airingThursdays" class="subsubheader">Airing Thursdays on the Knucklelodeon Network&trade;</p>
+      </hgroup>
+    </section>
   <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
-  </section>
+  </header>
   <section id="obstaclesSection" class="mainSection">
+    <section class="mainContent">
   <!-- TODO: Use (selector):after OR box-shadow? for top darkening -->
   <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
-    <!-- TODO: Is h2 legal here? -->
     <!-- TODO: (selector):after Checkboard -->
     <!-- TODO: Try to do the checkboard via CSS gradients? -->
     <!-- TODO: CSS Drop shadow text -->
-    <h2>Obstacles</h2>
-    <!-- TODO: Wrap buttons in nav? -->
-    <!-- TODO: Is section appropriate or should it be div? -->
-    <!-- TODO: Media query large: 3x2 vertical + aside -->
-    <!-- TODO: Media query small: 3x2 vertical, no aside -->
-    <!-- TODO: Media query ultra small: 6x1 vertical, no aside -->
-    <section>
-      <!-- TODO: Put in SVG/image fallback for each button -->
-      <!-- TODO: Image fallbacks should be in PNG sprite -->
-      <!-- TODO: Add rollover/focus for buttons -->
-      <!-- TODO: Capitalize letters via CSS -->
-      <!-- TODO: Put figure, figcaption inside of buttons? -->
-      <button>The Tank</button>
-      <button>Sundae Slide</button>
-      <button>Human Hamster Wheel</button>
-      <button>Down the Hatch</button>
-      <button>Pick It!</button>
-      <button>The Wringer</button>
-    </section>
-    <!-- TODO: Should this be an aside -->
-    <section>
-      <figure>
-      <!-- TODO: Capitalize via CSS -->
-      <!-- TODO: CSS transform rotate -->
-      <!-- TODO: Figure out how to do backdrop (probably just an image; same as h1) (ideal for SVG) -->
-      <!-- TODO: CSS Drop shadow text -->
-      <figcaption>Down the hatch<br/>6ft slide covered in gunk!</figcaption>
-      <!-- TODO: Insert default image here -->
-      <img src="" alt=""/>
-      </figure>
+      <h2>Obstacles</h2>
+      <!-- TODO: Wrap buttons in nav? -->
+      <!-- TODO: Is section appropriate or should it be div? -->
+      <!-- TODO: Media query large: 3x2 vertical + aside -->
+      <!-- TODO: Media query small: 3x2 vertical, no aside -->
+      <!-- TODO: Media query ultra small: 6x1 vertical, no aside -->
+      <section>
+        <!-- TODO: Put in SVG/image fallback for each button -->
+        <!-- TODO: Image fallbacks should be in PNG sprite -->
+        <!-- TODO: Add rollover/focus for buttons -->
+        <!-- TODO: Capitalize letters via CSS -->
+        <!-- TODO: Put figure, figcaption inside of buttons? -->
+        <button>The Tank</button>
+        <button>Sundae Slide</button>
+        <button>Human Hamster Wheel</button>
+        <button>Down the Hatch</button>
+        <button>Pick It!</button>
+        <button>The Wringer</button>
+      </section>
+      <!-- TODO: Should this be an aside -->
+      <section>
+        <figure>
+        <!-- TODO: Capitalize via CSS -->
+        <!-- TODO: CSS transform rotate -->
+        <!-- TODO: Figure out how to do backdrop (probably just an image; same as h1) (ideal for SVG) -->
+        <!-- TODO: CSS Drop shadow text -->
+        <figcaption>Down the hatch<br/>6ft slide covered in gunk!</figcaption>
+        <!-- TODO: Insert default image here -->
+        <img src="" alt=""/>
+        </figure>
+      </section>
     </section>
   <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
   </section>
@@ -82,7 +92,7 @@
     <!-- TODO: Is h2 legal here? -->
     <!-- TODO: (selector):after Checkboard -->
     <!-- TODO: Try to do the checkboard via CSS gradients? -->
-    <h2>Obstacles</h2>
+    <h2>Prizes</h2>
     <!-- TODO: Is section appropriate or should it be div? -->
     <!-- TODO: Media query large: 2x2 normal -->
     <!-- TODO: Media query small: 4x1 normal -->
@@ -136,17 +146,18 @@
     <!-- TODO: Media query small: Normal + no-aside -->
     <!-- TODO: Media query ultra small: Line break for select boxes, everything else thinner + no-aside -->
     <section>
-      <fieldset>
-        <!-- TODO: Should text be default text be inside or outside (FOUT) -->
-        <!-- TODO: CSS Coloring -->
-        <!-- TODO: CSS Capitalize -->
-        <!-- TODO: All inputs must have non-default value (except photo url?) -->
-        <!-- TODO: Use outline: red for erroring and maybe red bubble too -->
-        <input type="text" value="Your Name" default="Your Name"/>
-        <input type="text" value="Email Address" default="Email Address"/>
-        <input type="text" value="Team Name" default="Team Name"/>
-        <!-- TODO: Div is the right element here? -->
-        <div>
+      <form target="#" action="GET">
+        <fieldset>
+          <!-- TODO: Should text be default text be inside or outside (FOUT) -->
+          <!-- TODO: CSS Coloring -->
+          <!-- TODO: CSS Capitalize -->
+          <!-- TODO: All inputs must have non-default value (except photo url?) -->
+          <!-- TODO: Use outline: red for erroring and maybe red bubble too -->
+          <legend></legend>
+          <!-- TODO: No br's, use unit's and %'s instead -->
+          <input type="text" value="Your Name" default="Your Name" />
+          <input type="text" value="Email Address" default="Email Address"/>
+          <input type="text" value="Team Name" default="Team Name"/>
           <!-- TODO: I think I saw this style of dropdown on CSS Tricks -->
           <select default="Team Color">
             <!-- TODO: Disallow this as default submit option -->
@@ -160,15 +171,14 @@
             <option>Male</option>
             <option>Female</option>
           </select>
-        </div>
-        <input type="text" value="Profile Photo URL" default="Profile Photo URL"/>
-        <!-- TODO: Add background image SVG/PNG fallback -->
-        <!-- TODO: CSS Transform on text -->
-        <!-- TODO: CSS Drop shadow on text -->
-        <button>Submit Entry!</button>
-      </fieldset>
+          <input type="text" value="Profile Photo URL" default="Profile Photo URL"/>
+          <!-- TODO: Add background image SVG/PNG fallback -->
+          <!-- TODO: CSS Transform on text -->
+          <!-- TODO: CSS Drop shadow on text -->
+          <button>Submit Entry!</button>
+        </fieldset>
+      </form>
     </section>
-    <!-- TODO: Aside is legitimate here? -->
     <aside>
       <figure>
         <!-- TODO: Use SVG and fallback to PNG -->

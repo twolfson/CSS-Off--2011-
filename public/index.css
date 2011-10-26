@@ -1,0 +1,101 @@
+/* Font faces */
+@font-face {
+  font-family: 'KomikaTitle-PaintRegular';
+  src: url('fonts/KomikaTitle-Paint-webfont.eot');
+  src: url('fonts/KomikaTitle-Paint-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/KomikaTitle-Paint-webfont.woff') format('woff'),
+       url('fonts/KomikaTitle-Paint-webfont.ttf') format('truetype'),
+       url('fonts/KomikaTitle-Paint-webfont.svg#KomikaTitle-PaintRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General theming */
+h1, h2, h3, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* TODO: Incorporate noise to background */
+  background: #80C1D6;
+  font-family: Open Sans, sans-serif;
+  font-weight: 600;
+  color: #FFF;
+}
+
+.mainSection .mainContent {
+  max-width: 940px;
+  /* TODO: Deal with IE6 width issue */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.komikaText {
+  font-family: KomikaTitle-PaintRegular, sans-serif;
+}
+
+/* Specific classes */
+
+/* navBar specific */
+#navBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* TODO: Should text-align center be a property of this or all nav? */
+  text-align: center;
+
+  /* TODO: Opacity off of scroll, but opaque on scroll */
+  background: #79b9ce;
+/*
+  /* Fallback for browsers without RGBa support *
+  background-color: rgb(15, 40, 48);
+  background-color: rgba(15, 40, 48, 0.05);
+  /* For IE 5.5 - 7*
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0F28300C, endColorstr=#0F28300C);
+  /* For IE 8*
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0F28300C, endColorstr=#0F28300C)";
+*/
+  /* TODO: Default text should be white? */
+  color: #000;
+  
+  text-transform: uppercase;
+}
+
+#navBar .link {
+  color: #FFF;
+  text-decoration: none;
+}
+
+#navBar .link:hover {
+  text-decoration: underline;
+}
+
+/* topSection specific */
+#topSection .mainContent {
+  text-align: center;
+}
+
+#topSection .subheader {
+  /* TODO: Somehow get this to be more accurate */
+  font-size: 2.8em;
+  letter-spacing: .1em;
+  color: #FE6537;
+  /* TODO: Support IE6 */
+  text-shadow: #FFF 1.5px 2.6px;
+}
+
+#topSection .subsubheader {
+  font-size: 1.4em;
+}
+
+/* obstaclesSection specific */
+#obstaclesSection .mainContent {
+  background: #F0F;
+}
+
+/* TODO: Remove me (debug things) */
+.mainContent {
+  outline: 2px solid #0F0;
+}
