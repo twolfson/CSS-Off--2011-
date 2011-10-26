@@ -27,49 +27,46 @@
     <a href="#topSection" class="link">Back to top</a>
   </nav>
   <!-- TODO: Document media query large, medium, small, ultra small -->
-  <header id="topSection" class="mainSection">
+  <header id="topSection" class="mainSection clear">
   <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
     <!-- TODO: Should this be a div or a section? [I think div] -->
-    <section class="mainContent">
+    <section class="mainContent clear">
       <!-- TODO: Placeholder for navBar -->
       <div id="navBarPlaceholder">&nbsp;</div>
       <!-- TODO: Wrap in SVG -->
       <!-- TODO: Fallback with image -->
       <!-- TODO: Re-id these better -->
       <hgroup>
-        <h1 id="tripleDare">Triple Dare</h1>
+        <h1 class="header">Triple Dare</h1>
         <!-- TODO: Should this be capitalized via CSS or not? -->
-        <h2 id="messiestChallenge" class="komikaText subheader" title="The Web's messiest challenge!">The Web&#39;s messiest challenge!</h2>
-        <h3 id="airingThursdays" class="subsubheader">Airing Thursdays on the Knucklelodeon Network&trade;</p>
+        <h2 class="komikaText subheader" title="The Web's messiest challenge!">The Web&#39;s messiest challenge!</h2>
+        <h3 class="subsubheader">Airing Thursdays on the Knucklelodeon Network&trade;</p>
       </hgroup>
     </section>
   <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
   </header>
-  <section id="obstaclesSection" class="mainSection">
-    <section class="mainContent">
-  <!-- TODO: Use (selector):after OR box-shadow? for top darkening -->
+  <section id="obstaclesSection" class="mainSection clear">
+    <section class="mainContent clear">
   <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
     <!-- TODO: (selector):after Checkboard -->
+    <!-- TODO: Handle media query for checkerboard? -->
     <!-- TODO: Try to do the checkboard via CSS gradients? -->
-    <!-- TODO: CSS Drop shadow text -->
-      <h2>Obstacles</h2>
-      <!-- TODO: Wrap buttons in nav? -->
-      <!-- TODO: Is section appropriate or should it be div? -->
+      <h2 class="komikaText header">Obstacles</h2>
       <!-- TODO: Media query large: 3x2 vertical + aside -->
       <!-- TODO: Media query small: 3x2 vertical, no aside -->
       <!-- TODO: Media query ultra small: 6x1 vertical, no aside -->
-      <section>
+      <section id="obstacleButtons">
         <!-- TODO: Put in SVG/image fallback for each button -->
         <!-- TODO: Image fallbacks should be in PNG sprite -->
         <!-- TODO: Add rollover/focus for buttons -->
         <!-- TODO: Capitalize letters via CSS -->
         <!-- TODO: Put figure, figcaption inside of buttons? -->
-        <button>The Tank</button>
-        <button>Sundae Slide</button>
-        <button>Human Hamster Wheel</button>
-        <button>Down the Hatch</button>
-        <button>Pick It!</button>
-        <button>The Wringer</button>
+        <button class="link komikaText">The Tank</button>
+        <button class="link komikaText">Sundae Slide</button>
+        <button class="link komikaText">Human Hamster Wheel</button>
+        <button class="link komikaText">Down the Hatch</button>
+        <button class="link komikaText">Pick It!</button>
+        <button class="link komikaText">The Wringer</button>
       </section>
       <!-- TODO: Should this be an aside -->
       <section>
@@ -86,7 +83,7 @@
     </section>
   <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
   </section>
-  <section id="prizesSection" class="mainSection">
+  <section id="prizesSection" class="mainSection clear">
   <!-- TODO: Use (selector):after OR box-shadow? for top darkening -->
   <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
     <!-- TODO: Is h2 legal here? -->

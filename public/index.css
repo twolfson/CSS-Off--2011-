@@ -16,12 +16,14 @@ h1, h2, h3, p, div {
   padding: 0;
 }
 
+* {
+  font-family: Open Sans, sans-serif;
+  color: #FFF;
+}
+
 body {
   /* TODO: Incorporate noise to background */
   background: #80C1D6;
-  font-family: Open Sans, sans-serif;
-  font-weight: 600;
-  color: #FFF;
 }
 
 .mainSection .mainContent {
@@ -34,6 +36,14 @@ body {
 
 .komikaText {
   font-family: KomikaTitle-PaintRegular, sans-serif;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.clear {
+  clear: both;
 }
 
 /* Specific classes */
@@ -59,13 +69,14 @@ body {
 */
   /* TODO: Default text should be white? */
   color: #000;
-  
+
   text-transform: uppercase;
 }
 
 #navBar .link {
   color: #FFF;
   text-decoration: none;
+  margin: 0 1.74em;
 }
 
 #navBar .link:hover {
@@ -83,7 +94,7 @@ body {
   letter-spacing: .1em;
   color: #FE6537;
   /* TODO: Support IE6 */
-  text-shadow: #FFF 1.5px 2.6px;
+  text-shadow: #FFF 1.74px 2.44px;
 }
 
 #topSection .subsubheader {
@@ -91,11 +102,40 @@ body {
 }
 
 /* obstaclesSection specific */
-#obstaclesSection .mainContent {
-  background: #F0F;
+#obstaclesSection {
+  /* TODO: Add noise */
+  background: #FE6638;
+  border-width: 7px 0;
+  border-style: solid;
+  border-color: rgb(237, 88, 48);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+#obstaclesSection .header {
+  color: #FEFEFE;
+  /* TODO: Come back and touch up font-size */
+  font-size: 1.7em;
+  text-shadow: rgb(203, 82, 45) 2.90px 4.07px;
+  text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
+}
+
+#obstacleButtons .link {
+  /* TODO: Add noise */
+  background: #80B238;
+  border: 0px;
+  /* TODO: Multi-browser me */
+  border-radius: 5px;
+}
+
+/* Media queries for sectioning */
+@media (min-width: 470px) {
+  #obstacleButtons {
+    width: 50%;
+    float: left;
+  }
 }
 
 /* TODO: Remove me (debug things) */
 .mainContent {
-  outline: 2px solid #0F0;
+  /* outline: 2px solid #0F0; */
 }
