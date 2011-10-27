@@ -21,11 +21,6 @@ h1, h2, h3, p, div {
   color: #FFF;
 }
 
-body {
-  /* TODO: Incorporate noise to background */
-  background: #80C1D6;
-}
-
 .mainSection .mainContent {
   max-width: 940px;
   /* TODO: Deal with IE6 width issue */
@@ -34,16 +29,76 @@ body {
   margin-right: auto;
 }
 
-.komikaText {
-  font-family: KomikaTitle-PaintRegular, sans-serif;
-}
-
 .link {
   cursor: pointer;
 }
 
 .clear {
   clear: both;
+}
+
+/* Specific groupings */
+
+/* Komika text */
+#topSection .subheader,
+#obstaclesSection .header,
+#obstacleButtons .link,
+#obstacleDescription .caption,
+#prizesSection .header,
+#prizesSection .subsection,
+.komikaText {
+  font-family: KomikaTitle-PaintRegular, sans-serif;
+}
+
+/* Blue background */
+body {
+  /* TODO: Incorporate noise to background */
+  background: #80C1D6;
+}
+
+/* Green background */
+#obstacleButtons .link,
+#prizesSection {
+  /* TODO: Add noise */
+  background: #80B238;
+}
+
+/* Orange background */
+#obstaclesSection {
+  /* TODO: Add noise */
+  background: #FE6638;
+}
+
+/* Orange font */
+#topSection .subheader,
+#obstacleButtons .link:hover {
+  color: #FE6537;
+}
+
+/* OOCSS size1of2 */
+#obstacleButtons,
+#prizesSection .subsection {
+  width: 50%;
+}
+
+/* OOCSS unit */
+#obstacleButtons,
+#prizesSection .subsection {
+/* TODO: Add media query for Prizes */
+  float: left;
+  overflow:hidden;
+  *overflow:visible;
+  *zoom:1;
+}
+
+/* OOCSS lastUnit */
+#obstacleDescription,
+#prizesSection .lastSubsection {
+  float: none;
+  width: auto;
+  _position: relative;
+  _left: -3px;
+  _margin-right: -3px;
 }
 
 /* Specific classes */
@@ -92,7 +147,6 @@ body {
   /* TODO: Somehow get this to be more accurate */
   font-size: 2.8em;
   letter-spacing: .1em;
-  color: #FE6537;
   /* TODO: Support IE6 */
   text-shadow: #FFF 1.74px 2.44px;
 }
@@ -103,8 +157,6 @@ body {
 
 /* obstaclesSection specific */
 #obstaclesSection {
-  /* TODO: Add noise */
-  background: #FE6638;
   border-width: 7px 0;
   border-style: solid;
   border-color: rgb(237, 88, 48);
@@ -120,18 +172,20 @@ body {
 }
 
 #obstacleButtons .link {
-  /* TODO: Add noise */
-  background: #80B238;
   border: 0px;
   /* TODO: Multi-browser me */
   border-radius: 5px;
 }
 
-/* Media queries for sectioning */
-@media (min-width: 470px) {
+/* Media query visibility */
+@media (max-width: 470px) {
   #obstacleButtons {
-    width: 50%;
-    float: left;
+    width: 100%;
+    float: none;
+  }
+  
+  #obstacleDescription {
+    display: none;
   }
 }
 
