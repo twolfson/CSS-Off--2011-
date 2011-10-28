@@ -1,3 +1,4 @@
+/* TODO: Don't forget to w3c me */
 /* Font faces */
 @font-face {
   font-family: 'KomikaTitle-PaintRegular';
@@ -21,7 +22,15 @@ h1, h2, h3, p, div {
   color: #FFF;
 }
 
-.mainSection .mainContent {
+/* Specific groupings */
+
+/* Main content */
+/* TODO: Deal with > if not supported by quirks */
+#topContent,
+#obstaclesContent,
+#prizesContent,
+#contestantContent,
+#footerContent {
   max-width: 940px;
   /* TODO: Deal with IE6 width issue */
   width: 100%;
@@ -29,24 +38,14 @@ h1, h2, h3, p, div {
   margin-right: auto;
 }
 
-.link {
-  cursor: pointer;
-}
-
-.clear {
-  clear: both;
-}
-
-/* Specific groupings */
-
 /* Komika text */
-#topSection .subheader,
-#obstaclesSection .header,
-#obstacleButtons .link,
-#obstacleDescription .caption,
-#prizesSection .header,
-#prizesSection .subsection,
-.komikaText {
+#topSection h2,
+#obstaclesSection h2,
+#obstaclesButtons button,
+#obstaclesDescription h3,
+#obstaclesDescription h4,
+#prizesSection h1,
+#prizesSection figcaption {
   font-family: KomikaTitle-PaintRegular, sans-serif;
 }
 
@@ -57,7 +56,7 @@ body {
 }
 
 /* Green background */
-#obstacleButtons .link,
+#obstaclesButtons button,
 #prizesSection {
   /* TODO: Add noise */
   background: #80B238;
@@ -70,20 +69,21 @@ body {
 }
 
 /* Orange font */
-#topSection .subheader,
-#obstacleButtons .link:hover {
+#topSection h2,
+#obstaclesButtons button:hover {
   color: #FE6537;
 }
 
 /* OOCSS size1of2 */
-#obstacleButtons,
-#prizesSection .subsection {
+#obstaclesButtons,
+#obstaclesDescription,
+#prizesSection div {
   width: 50%;
 }
 
 /* OOCSS unit */
-#obstacleButtons,
-#prizesSection .subsection {
+#obstaclesButtons,
+#prizesSection div {
 /* TODO: Add media query for Prizes */
   float: left;
   overflow:hidden;
@@ -92,8 +92,9 @@ body {
 }
 
 /* OOCSS lastUnit */
-#obstacleDescription,
-#prizesSection .lastSubsection {
+#obstaclesDescription,
+/* TODO: Make last-child backwards compat */
+#prizesSection div:last-child {
   float: none;
   width: auto;
   _position: relative;
@@ -122,28 +123,28 @@ body {
   /* For IE 8*
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0F28300C, endColorstr=#0F28300C)";
 */
-  /* TODO: Default text should be white? */
   color: #000;
 
+  /* TODO: Should this really be done here? */
   text-transform: uppercase;
 }
 
-#navBar .link {
+#navBar a {
   color: #FFF;
   text-decoration: none;
   margin: 0 1.74em;
 }
 
-#navBar .link:hover {
+#navBar a:hover {
   text-decoration: underline;
 }
 
 /* topSection specific */
-#topSection .mainContent {
+#topSection > section {
   text-align: center;
 }
 
-#topSection .subheader {
+#topSection h2 {
   /* TODO: Somehow get this to be more accurate */
   font-size: 2.8em;
   letter-spacing: .1em;
@@ -151,7 +152,7 @@ body {
   text-shadow: #FFF 1.74px 2.44px;
 }
 
-#topSection .subsubheader {
+#topSection h3 {
   font-size: 1.4em;
 }
 
@@ -163,7 +164,7 @@ body {
   border-color: rgba(0, 0, 0, 0.06);
 }
 
-#obstaclesSection .header {
+#obstaclesSection h2 {
   color: #FEFEFE;
   /* TODO: Come back and touch up font-size */
   font-size: 1.7em;
@@ -171,7 +172,7 @@ body {
   text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
 }
 
-#obstacleButtons .link {
+#obstaclesButtons button {
   border: 0px;
   /* TODO: Multi-browser me */
   border-radius: 5px;
@@ -179,12 +180,12 @@ body {
 
 /* Media query visibility */
 @media (max-width: 470px) {
-  #obstacleButtons {
+  #obstaclesButtons {
     width: 100%;
     float: none;
   }
   
-  #obstacleDescription {
+  #obstaclesDescription {
     display: none;
   }
 }
