@@ -100,17 +100,19 @@ body {
 
 /* OOCSS size1of2 */
 /*#obstacleSection*/ #obstaclesButtons,
-/*#obstacleSection*/ #obstaclesDescription,
 #prizesSection .prizeColumn,
 #contestantSection form,
-#contestantSection aside {
+/*#footerSection*/ #notAffiliated,
+/*#footerSection*/ #caAddress {
   width: 50%;
 }
 
 /* OOCSS unit */
 /*#obstacleSection*/ #obstaclesButtons,
 #prizesSection .prizeColumn,
-#contestantSection form {
+#contestantSection form,
+/*#footerSection*/ #notAffiliated,
+/*#footerSection*/ #caAddress {
 /* TODO: Add media query for Prizes */
   float: left;
 }
@@ -118,7 +120,9 @@ body {
 /* OOCSS lastUnit */
 /*#obstacleSection*/ #obstaclesDescription,
 #prizesSection #lastPrizeColumn,
-#contestantSection aside { /* TODO: Media query for contestant section */
+#contestantSection aside,
+/*#footerSection*/ #contestantConsent,
+/*#footerSection*/ #flAddress { /* TODO: Media query for contestant section */
   float: none;
   width: auto;
   _position: relative;
@@ -215,6 +219,31 @@ body {
   /* http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ */
 }
 
+/* footerSection specific */
+#footerSection {
+  text-align: center;
+}
+
+/*#footerSection*/ #notAffiliated,
+/*#footerSection*/ #caAddress {
+  text-align: right;
+  margin-left: -1em;
+  margin-right: 2em;
+}
+
+#footerSection address {
+  font-style: normal;
+}
+
+/*#footerSection*/ #contestantConsent,
+/*#footerSection*/ #flAddress {
+  text-align: left;
+}
+
+#footerSection cite {
+  font-style: normal;
+}
+
 /* Media queries */
 @media (max-width: 470px) {
   #obstaclesButtons {
@@ -225,6 +254,10 @@ body {
   #obstaclesDescription {
     display: none;
   }
+  
+  /* TODO: Prizes */
+  /* TODO: Contestant */
+  /* TODO: Footer */
 }
 
 /* TODO: Remove me (debug things) */
