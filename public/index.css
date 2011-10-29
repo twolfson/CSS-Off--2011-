@@ -221,7 +221,7 @@ body {
 #obstaclesButtons button {
   width: 220px;
   height: 220px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   border: 0px;
   /* TODO: Multi-browser me */
   border-radius: 5px;
@@ -230,7 +230,7 @@ body {
 /*#obstaclesButtons*/ #theTank,
 /*#obstaclesButtons*/ #humanHamsterWheel,
 /*#obstaclesButtons*/ #pickIt {
-  margin-right: 20px;
+  margin-right: 16px;
 }
 
 /*#obstaclesSection*/ #obstaclesDescription {
@@ -247,8 +247,9 @@ body {
 /* contestantSection specific */
 #contestantSection fieldset {
   border: 0;
-  padding: 0 8em 0 0;
+  padding: 0;
   margin: 0;
+  width: 380px;
 }
 
 #contestantSection input,
@@ -261,13 +262,13 @@ body {
 }
 
 #contestantSection #teamColor {
-  width: 58%;
+  width: 220px;
 }
 
 #contestantSection #gender {
   display: block;
   float: right;
-  width: 40%;
+  width: 140px;
 }
 
 /*#contestantSection*/ #submitEntry {
