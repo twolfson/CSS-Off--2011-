@@ -40,7 +40,6 @@ input, select {
 /* Specific groupings */
 
 /* Main content */
-/* TODO: Deal with > if not supported by quirks */
 #topContent,
 #obstaclesContent,
 #prizesContent,
@@ -63,6 +62,7 @@ input, select {
 #prizesSection h2,
 #prizesSection figcaption,
 #contestantSection h2,
+/*#contestantSection*/ #submitEntry,
 #contestantSection figcaption {
   font-family: KomikaTitle-PaintRegular, sans-serif;
 }
@@ -92,8 +92,15 @@ body {
   background: #FE6638;
 }
 
+/* Yellow background */
+/* TODO: Bind to inputs currently being edited */
+#obstaclesButtons button:hover {
+  background: #EEF13F;
+}
+
 /* Orange font */
 #topSection h2,
+/* TODO: IE Hover */
 #obstaclesButtons button:hover {
   color: #FE6537;
 }
@@ -130,6 +137,16 @@ body {
   _margin-right: -3px;
 }
 
+/* Clearfix */
+#obstaclesContent:after,
+#prizesContent:after,
+#contestantContent:after {
+  content: " ";
+  clear: both;
+  display: block;
+  visibility: hidden;
+}
+
 /* Specific classes */
 
 /* navBar specific */
@@ -163,6 +180,7 @@ body {
   margin: 0 1.74em;
 }
 
+/* TODO: Deal with IE hover */
 #navBar a:hover {
   text-decoration: underline;
 }
@@ -201,22 +219,70 @@ body {
 }
 
 #obstaclesButtons button {
+  width: 220px;
+  height: 220px;
+  margin-bottom: 20px;
   border: 0px;
   /* TODO: Multi-browser me */
   border-radius: 5px;
 }
 
+/*#obstaclesButtons*/ #theTank,
+/*#obstaclesButtons*/ #humanHamsterWheel,
+/*#obstaclesButtons*/ #pickIt {
+  margin-right: 20px;
+}
+
+/*#obstaclesSection*/ #obstaclesDescription {
+  text-align: center;
+  /* TODO: Text-rototation */
+}
+
+/* prizesSection specific */
+#prizesSection .prizeColumn {
+  /* TODO: Border */
+  text-align: center;
+}
+
 /* contestantSection specific */
 #contestantSection fieldset {
   border: 0;
-  padding: 0;
+  padding: 0 8em 0 0;
   margin: 0;
+}
+
+#contestantSection input,
+#contestantSection select {
+  width: 100%;
+  /* TODO: Deal with IE6 */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#contestantSection #teamColor {
+  width: 58%;
+}
+
+#contestantSection #gender {
+  display: block;
+  float: right;
+  width: 40%;
+}
+
+/*#contestantSection*/ #submitEntry {
+  margin: 0 auto;
+  display: block;
 }
 
 #contestantSection input,
 #contestantSection button {
   /* TODO: Overlay and style with JS */
   /* http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ */
+}
+
+#contestantSection aside {
+  text-align: center;
 }
 
 /* footerSection specific */
@@ -244,19 +310,44 @@ body {
   font-style: normal;
 }
 
+#footerSection a:link {
+  text-decoration: none;
+}
+
 /* Media queries */
 @media (max-width: 470px) {
+  /* Obstacle section */
   #obstaclesButtons {
     width: 100%;
     float: none;
   }
-  
+
   #obstaclesDescription {
     display: none;
   }
-  
+
   /* TODO: Prizes */
-  /* TODO: Contestant */
+
+  /* Contestant section */
+  #contestantSection #teamColor,
+  #contestantSection #gender {
+    width: 100%;
+    display: block;
+    float: none;
+  }
+
+  #contestantSection form {
+    width: 100%;
+  }
+  
+  #contestantSection fieldset {
+    padding: 0;
+  }
+
+  #contestantSection aside {
+    display: none;
+  }
+
   /* TODO: Footer */
 }
 
