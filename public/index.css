@@ -11,6 +11,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'DigitaldreamFatRegular';
+  src: url('fonts/DIGITALDREAMFAT-webfont.eot');
+  src: url('fonts/DIGITALDREAMFAT-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/DIGITALDREAMFAT-webfont.woff') format('woff'),
+       url('fonts/DIGITALDREAMFAT-webfont.ttf') format('truetype'),
+       url('fonts/DIGITALDREAMFAT-webfont.svg#DigitaldreamFatRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* General theming */
 h1, h2, h3, p, div {
   margin: 0;
@@ -20,6 +31,10 @@ h1, h2, h3, p, div {
 * {
   font-family: Open Sans, sans-serif;
   color: #FFF;
+}
+
+input, select {
+  color: #000;
 }
 
 /* Specific groupings */
@@ -36,6 +51,7 @@ h1, h2, h3, p, div {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  clear: both;
 }
 
 /* Komika text */
@@ -44,9 +60,16 @@ h1, h2, h3, p, div {
 #obstaclesButtons button,
 #obstaclesDescription h3,
 #obstaclesDescription h4,
-#prizesSection h1,
-#prizesSection figcaption {
+#prizesSection h2,
+#prizesSection figcaption,
+#contestantSection h2,
+#contestantSection figcaption {
   font-family: KomikaTitle-PaintRegular, sans-serif;
+}
+
+/* Digital Dream text */
+/*#contestantSection*/ #contestantTimer {
+  font-family: DigitaldreamFatRegular, monospace, sans-serif;
 }
 
 /* Blue background */
@@ -57,7 +80,8 @@ body {
 
 /* Green background */
 #obstaclesButtons button,
-#prizesSection {
+#prizesSection,
+#contestantSection button {
   /* TODO: Add noise */
   background: #80B238;
 }
@@ -75,26 +99,26 @@ body {
 }
 
 /* OOCSS size1of2 */
-#obstaclesButtons,
-#obstaclesDescription,
-#prizesSection div {
+/*#obstacleSection*/ #obstaclesButtons,
+/*#obstacleSection*/ #obstaclesDescription,
+#prizesSection .prizeColumn,
+#contestantSection form,
+#contestantSection aside {
   width: 50%;
 }
 
 /* OOCSS unit */
-#obstaclesButtons,
-#prizesSection div {
+/*#obstacleSection*/ #obstaclesButtons,
+#prizesSection .prizeColumn,
+#contestantSection form {
 /* TODO: Add media query for Prizes */
   float: left;
-  overflow:hidden;
-  *overflow:visible;
-  *zoom:1;
 }
 
 /* OOCSS lastUnit */
-#obstaclesDescription,
-/* TODO: Make last-child backwards compat */
-#prizesSection div:last-child {
+/*#obstacleSection*/ #obstaclesDescription,
+#prizesSection #lastPrizeColumn,
+#contestantSection aside { /* TODO: Media query for contestant section */
   float: none;
   width: auto;
   _position: relative;
@@ -140,7 +164,7 @@ body {
 }
 
 /* topSection specific */
-#topSection > section {
+#topSection #topContent {
   text-align: center;
 }
 
@@ -178,7 +202,20 @@ body {
   border-radius: 5px;
 }
 
-/* Media query visibility */
+/* contestantSection specific */
+#contestantSection fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#contestantSection input,
+#contestantSection button {
+  /* TODO: Overlay and style with JS */
+  /* http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ */
+}
+
+/* Media queries */
 @media (max-width: 470px) {
   #obstaclesButtons {
     width: 100%;
