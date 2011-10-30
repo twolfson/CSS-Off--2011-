@@ -28,14 +28,14 @@
   color: #FFF;
 }
 
-input, select {
+input, select, option {
   color: #000;
 }
 
 /* Specific groupings */
 
 /* Main content */
-#topSection,
+#topSection hgroup,
 #obstaclesSection header,
 #obstaclesSection article,
 #prizesSection header,
@@ -60,7 +60,7 @@ input, select {
 #prizesSection h2,
 #prizesSection figcaption,
 #contestantSection h2,
-/*#contestantSection*/ #submitEntry,
+#submitEntry span,
 #contestantSection figcaption {
   font-family: KomikaTitle-PaintRegular, sans-serif;
 }
@@ -70,32 +70,34 @@ input, select {
   font-family: DigitaldreamFatRegular, monospace, sans-serif;
 }
 
-/* Blue background */
+/* Blue texture background */
 body {
-  /* TODO: Incorporate noise to background */
-  background: url('images/blue_texture.png') left top repeat,
-              url('images/blue_splat.png') center -207px no-repeat,
-              #80C1D6;
+  background: #80C1D6 url('images/blue_texture.png') left top repeat;
+}
+
+/* Blue splat */
+#topSection {
+  /* TODO: Add noise to splat for ie8 */
+  background: url('images/blue_splat.png') center -207px no-repeat;
 }
 
 /* Green background */
 #obstaclesButtons li,
-#prizesSection,
-#contestantSection button {
-  background: url('images/green_texture.png'), #80B238;
+#prizesSection {
+  background: #80B238 url('images/green_texture.png');
 }
 
 /* Orange background */
 #obstaclesSection {
   /* TODO: Add noise */
-  background: url('images/orange_texture.png'), #FE6638;
+  background: #FE6638 url('images/orange_texture.png');
 }
 
 /* Yellow background */
 /* TODO: Bind to inputs currently being edited */
 #obstaclesButtons li:hover,
 #obstaclesButtons .featuredObstacle {
-  background: url('images/yellow_texture.png'), #EEF13F;
+  background: #EEF13F url('images/yellow_texture.png');
 }
 
 /* Orange font */
@@ -104,6 +106,11 @@ body {
 #obstaclesButtons li:hover figcaption,
 #obstaclesButtons .featuredObstacle figcaption {
   color: #FE6537;
+}
+
+/* Yellow font */
+/*#contestantSection*/ #contestantTimer {
+  color: #F5EB00;
 }
 
 /* OOCSS size1of2 */
@@ -231,7 +238,7 @@ body {
   border-style: solid;
   border-color: rgb(237, 88, 48);
   border-color: rgba(0, 0, 0, 0.06);
-  padding-bottom: 66px;
+  padding: 44px 0 66px;
 }
 
 #obstaclesSection h2 {
@@ -240,18 +247,17 @@ body {
   text-shadow: rgb(203, 82, 45) 2.90px 4.07px;
   text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
   background: url('images/obstacles_checkerboard.png') top right no-repeat;
-  margin: 44px 0 57px;
+  margin-bottom: 57px;
 }
 
 #obstaclesButtons li {
   height: 220px;
   width: 220px;
-  margin-bottom: 16px;
+  margin: 0 16px 16px 0;
   border: 0px;
   /* TODO: Multi-browser me */
   border-radius: 5px;
 
-  display: block;
   float: left;
 
   cursor: pointer;
@@ -261,10 +267,10 @@ body {
   z-index: 10;
 }
 
-/*#obstaclesButtons*/ #theTank,
-/*#obstaclesButtons*/ #humanHamsterWheel,
-/*#obstaclesButtons*/ #pickIt {
-  margin-right: 16px;
+#obstaclesButtons #sundaeSlide,
+#obstaclesButtons #downTheHatch,
+#obstaclesButtons #theWringer {
+  margin-right: 0;
 }
 
 /* TODO: Try to do this better? */
@@ -300,6 +306,7 @@ body {
 
 #obstaclesButtons figcaption {
   position: absolute;
+  left: 0;
   bottom: 16px;
   width: 100%;
 }
@@ -313,7 +320,8 @@ body {
 
 #obstaclesDescription figcaption {
   background: url('images/green_splat.png') top center no-repeat;
-  background-size: 236px 206px;
+  background-size: 236px;
+  /* TODO: Make a smaller image for IE7 */
   height: 210px;
   width: 393px;
   margin-left: auto;
@@ -322,17 +330,18 @@ body {
 
 #obstaclesDescription h3,
 #obstaclesDescription h4 {
-  -webkit-transform: rotate(-7deg);
-  -moz-transform:    rotate(-7deg);
-  -ms-transform:     rotate(-7deg);
-  -o-transform:      rotate(-7deg);
+  -webkit-transform: rotate(-8deg);
+  -moz-transform:    rotate(-8deg);
+  -ms-transform:     rotate(-8deg);
+  -o-transform:      rotate(-8deg);
   /* TODO: Text shadow */
 }
 
 #obstaclesDescription h3 {
   font-size: 2.2em;
-  padding-top: 2em;
-  padding-bottom: .5em;
+  padding-top: 1.4em;
+  padding-bottom: 0.5em;
+  /* TODO: Make sure this works with each text combo */
 }
 
 #obstaclesDescription img {
@@ -340,15 +349,75 @@ body {
   position: absolute;
   bottom: 0;
   right: 40px;
+  /* TODO: Test robustly with each image */
 }
 
 /* prizesSection specific */
-#prizesSection .prizeColumn {
-  /* TODO: Border */
+#prizesSection {
+  /* TODO: Border Shadow */
+  padding-top: 63px;
+  padding-bottom: 144px;
+}
+
+/* TODO: Merge these checkerboard things */
+#prizesSection h2 {
+  font-size: 40px;
+  /* TODO: Color text-shadow */
+  text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
+  background: url('images/prizes_checkerboard.png') top right no-repeat;
+  margin-bottom: 85px;
+}
+
+#prizesSection ul {
+  position: relative;
+  height: 723px;
+}
+
+#prizesSection li {
+  float: left;
+  width: 470px;
   text-align: center;
 }
 
+#prizesSection #nashSkateboard,
+#prizesSection #tvVcrCombo {
+  float: right;
+}
+
+#prizesSection figcaption {
+  margin-top: 1em;
+}
+
+#prizesSection #casioKeyboard,
+#prizesSection #tvVcrCombo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* TODO: Link prizes to websites? NASA, Tony Hawk's Pro Skater, Amazon, Amazon */
+#casioKeyboard figcaption {
+  margin-top: 2.5em;
+}
+
+#prizesSection #tvVcrCombo {
+  left: 470px;
+}
+
 /* contestantSection specific */
+#contestantSection {
+  padding-top: 67px;
+  /* TODO: Shadow */
+}
+
+#contestantSection h2 {
+  font-size: 40px;
+  /* TODO: Color text-shadow */
+  text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
+  background: url('images/contestant_checkerboard.png') top right no-repeat;
+  margin-bottom: 85px;
+}
+
 #contestantSection fieldset {
   border: 0;
   padding: 0;
@@ -358,11 +427,15 @@ body {
 
 #contestantSection input,
 #contestantSection select {
+  height: 50px;
   width: 100%;
   /* TODO: Deal with IE6 */
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  margin-bottom: 16px;
+  /* TODO: Overlay and style with JS */
+  /* http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ */
 }
 
 #contestantSection #teamColor {
@@ -376,18 +449,42 @@ body {
 }
 
 /*#contestantSection*/ #submitEntry {
-  margin: 0 auto;
   display: block;
+  border: 0;
+  margin: 0 auto;
+  height: 154px;
+  width: 227px;
+  background: transparent url('images/green_splat.png') top center no-repeat;
+  background-size: 170px;
+  font-size: 1.5em;
+  padding-bottom: 40px;
 }
 
-#contestantSection input,
-#contestantSection button {
-  /* TODO: Overlay and style with JS */
-  /* http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ */
+#submitEntry span {
+  -webkit-transform: rotate(-8deg);
+  -moz-transform:    rotate(-8deg);
+  -ms-transform:     rotate(-8deg);
+  -o-transform:      rotate(-8deg);
+  /* TODO: Text shadow */
 }
 
 #contestantSection aside {
   text-align: center;
+}
+
+/*#contestantSection*/ #contestantTimer {
+  background: url('images/timer_backdrop.png') top center no-repeat;
+  height: 236px; /* 329 - 93 */
+  width: 386px; 
+  margin: 0 32px 32px auto; /* right = (470 - 386) / 2 - 10 */
+  padding: 93px 0 0 10px;
+  font-size: 9em;
+  
+}
+
+#timerBlock figcaption {
+  font-size: 2.4em;
+  /* TODO: Text shadow */
 }
 
 /* footerSection specific */
