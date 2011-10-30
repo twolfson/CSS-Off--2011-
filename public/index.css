@@ -54,7 +54,7 @@ input, select {
 /* Komika text */
 #topSection h2,
 #obstaclesSection h2,
-#obstaclesButtons button,
+#obstaclesButtons figcaption,
 #obstaclesDescription h3,
 #obstaclesDescription h4,
 #prizesSection h2,
@@ -79,7 +79,7 @@ body {
 }
 
 /* Green background */
-#obstaclesButtons button,
+#obstaclesButtons li,
 #prizesSection,
 #contestantSection button {
   background: url('images/green_texture.png'), #80B238;
@@ -93,7 +93,7 @@ body {
 
 /* Yellow background */
 /* TODO: Bind to inputs currently being edited */
-#obstaclesButtons button:hover,
+#obstaclesButtons li:hover,
 #obstaclesButtons .featuredObstacle {
   background: url('images/yellow_texture.png'), #EEF13F;
 }
@@ -101,8 +101,8 @@ body {
 /* Orange font */
 #topSection h2,
 /* TODO: IE Hover */
-#obstaclesButtons button:hover,
-#obstaclesButtons .featuredObstacle {
+#obstaclesButtons li:hover figcaption,
+#obstaclesButtons .featuredObstacle figcaption {
   color: #FE6537;
 }
 
@@ -160,6 +160,7 @@ body {
 
   /* TODO: Opacity off of scroll, but opaque on scroll */
   background: #79b9ce;
+  z-index: 1000;
 /*
   /* Fallback for browsers without RGBa support *
   background-color: rgb(15, 40, 48);
@@ -230,6 +231,7 @@ body {
   border-style: solid;
   border-color: rgb(237, 88, 48);
   border-color: rgba(0, 0, 0, 0.06);
+  padding-bottom: 66px;
 }
 
 #obstaclesSection h2 {
@@ -238,21 +240,25 @@ body {
   text-shadow: rgb(203, 82, 45) 2.90px 4.07px;
   text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
   background: url('images/obstacles_checkerboard.png') top right no-repeat;
-  margin: 40px 0;
+  margin: 44px 0 57px;
 }
 
-#obstaclesButtons button {
+#obstaclesButtons li {
   height: 220px;
   width: 220px;
   margin-bottom: 16px;
   border: 0px;
   /* TODO: Multi-browser me */
   border-radius: 5px;
-  
+
   display: block;
   float: left;
-  
-  vertical-align: baseline;
+
+  cursor: pointer;
+  text-align: center;
+
+  position: relative;
+  z-index: 10;
 }
 
 /*#obstaclesButtons*/ #theTank,
@@ -261,39 +267,79 @@ body {
   margin-right: 16px;
 }
 
+/* TODO: Try to do this better? */
 #theTank img {
   height: 152px;
-  width: 171px;
+  margin-top: 23px;
 }
 
 #sundaeSlide img {
   height: 168px;
-  width: 118px;
+  margin-top: 13px;
 }
 
 #humanHamsterWheel img {
   height: 164px;
-  width: 166px;
+  margin-top: 10px;
 }
 
 #downTheHatch img {
   height: 161px;
-  width: 126px;
+  margin-top: 15px;
 }
 
 #pickIt img {
   height: 161px;
-  width: 163px;
+  margin-top: 14px;
 }
 
 #theWringer img {
   height: 164px;
-  width: 160px;
+  margin-top: 16px;
+}
+
+#obstaclesButtons figcaption {
+  position: absolute;
+  bottom: 16px;
+  width: 100%;
 }
 
 /*#obstaclesSection*/ #obstaclesDescription {
   text-align: center;
-  /* TODO: Text-rototation */
+  /* TODO: Text-drop shadow */
+  position: relative;
+  height: 692px; /* 220 * 3 + 16 * 2 */
+}
+
+#obstaclesDescription figcaption {
+  background: url('images/green_splat.png') top center no-repeat;
+  background-size: 236px 206px;
+  height: 210px;
+  width: 393px;
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+#obstaclesDescription h3,
+#obstaclesDescription h4 {
+  -webkit-transform: rotate(-7deg);
+  -moz-transform:    rotate(-7deg);
+  -ms-transform:     rotate(-7deg);
+  -o-transform:      rotate(-7deg);
+  /* TODO: Text shadow */
+}
+
+#obstaclesDescription h3 {
+  font-size: 2.2em;
+  padding-top: 2em;
+  padding-bottom: .5em;
+}
+
+#obstaclesDescription img {
+  width: 360px;
+  position: absolute;
+  bottom: 0;
+  right: 40px;
 }
 
 /* prizesSection specific */
@@ -398,7 +444,7 @@ body {
   #contestantSection form {
     width: 100%;
   }
-  
+
   #contestantSection fieldset {
     padding: 0;
   }
