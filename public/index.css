@@ -23,11 +23,6 @@
 }
 
 /* General theming */
-h1, h2, h3, p, div {
-  margin: 0;
-  padding: 0;
-}
-
 * {
   font-family: Open Sans, sans-serif;
   color: #FFF;
@@ -40,11 +35,14 @@ input, select {
 /* Specific groupings */
 
 /* Main content */
-#topContent,
-#obstaclesContent,
-#prizesContent,
-#contestantContent,
-#footerContent {
+#topSection,
+#obstaclesSection header,
+#obstaclesSection article,
+#prizesSection header,
+#prizesSection article,
+#contestantSection header,
+#contestantSection article,
+#footerSection {
   max-width: 940px;
   /* TODO: Deal with IE6 width issue */
   width: 100%;
@@ -75,33 +73,36 @@ input, select {
 /* Blue background */
 body {
   /* TODO: Incorporate noise to background */
-  background: #80C1D6;
+  background: url('images/blue_texture.png') left top repeat,
+              url('images/blue_splat.png') center -207px no-repeat,
+              #80C1D6;
 }
 
 /* Green background */
 #obstaclesButtons button,
 #prizesSection,
 #contestantSection button {
-  /* TODO: Add noise */
-  background: #80B238;
+  background: url('images/green_texture.png'), #80B238;
 }
 
 /* Orange background */
 #obstaclesSection {
   /* TODO: Add noise */
-  background: #FE6638;
+  background: url('images/orange_texture.png'), #FE6638;
 }
 
 /* Yellow background */
 /* TODO: Bind to inputs currently being edited */
-#obstaclesButtons button:hover {
-  background: #EEF13F;
+#obstaclesButtons button:hover,
+#obstaclesButtons .featuredObstacle {
+  background: url('images/yellow_texture.png'), #EEF13F;
 }
 
 /* Orange font */
 #topSection h2,
 /* TODO: IE Hover */
-#obstaclesButtons button:hover {
+#obstaclesButtons button:hover,
+#obstaclesButtons .featuredObstacle {
   color: #FE6537;
 }
 
@@ -138,9 +139,9 @@ body {
 }
 
 /* Clearfix */
-#obstaclesContent:after,
-#prizesContent:after,
-#contestantContent:after {
+#obstaclesSection article:after,
+#prizesSection article:after,
+#contestantSection article:after {
   content: " ";
   clear: both;
   display: block;
@@ -185,9 +186,28 @@ body {
   text-decoration: underline;
 }
 
+#navBar,
+#navBarPlaceholder {
+  line-height: 2em;
+}
+
 /* topSection specific */
-#topSection #topContent {
+#topSection {
   text-align: center;
+  padding-bottom: 9em;
+}
+
+#topSection h1 {
+  background: url('images/green_splat.png') center top no-repeat;
+  height: 426px;
+  width: 560px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#topSection h1 img {
+  margin-top: 100px;
+  margin-left: -36px;
 }
 
 #topSection h2 {
@@ -196,10 +216,12 @@ body {
   letter-spacing: .1em;
   /* TODO: Support IE6 */
   text-shadow: #FFF 1.74px 2.44px;
+  margin-top: 40px;
 }
 
 #topSection h3 {
   font-size: 1.4em;
+  margin-top: 12px;
 }
 
 /* obstaclesSection specific */
@@ -212,25 +234,61 @@ body {
 
 #obstaclesSection h2 {
   color: #FEFEFE;
-  /* TODO: Come back and touch up font-size */
-  font-size: 1.7em;
+  font-size: 40px;
   text-shadow: rgb(203, 82, 45) 2.90px 4.07px;
   text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
+  background: url('images/obstacles_checkerboard.png') top right no-repeat;
+  margin: 40px 0;
 }
 
 #obstaclesButtons button {
-  width: 220px;
   height: 220px;
+  width: 220px;
   margin-bottom: 16px;
   border: 0px;
   /* TODO: Multi-browser me */
   border-radius: 5px;
+  
+  display: block;
+  float: left;
+  
+  vertical-align: baseline;
 }
 
 /*#obstaclesButtons*/ #theTank,
 /*#obstaclesButtons*/ #humanHamsterWheel,
 /*#obstaclesButtons*/ #pickIt {
   margin-right: 16px;
+}
+
+#theTank img {
+  height: 152px;
+  width: 171px;
+}
+
+#sundaeSlide img {
+  height: 168px;
+  width: 118px;
+}
+
+#humanHamsterWheel img {
+  height: 164px;
+  width: 166px;
+}
+
+#downTheHatch img {
+  height: 161px;
+  width: 126px;
+}
+
+#pickIt img {
+  height: 161px;
+  width: 163px;
+}
+
+#theWringer img {
+  height: 164px;
+  width: 160px;
 }
 
 /*#obstaclesSection*/ #obstaclesDescription {
@@ -350,9 +408,4 @@ body {
   }
 
   /* TODO: Footer */
-}
-
-/* TODO: Remove me (debug things) */
-.mainContent {
-  /* outline: 2px solid #0F0; */
 }

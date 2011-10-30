@@ -5,13 +5,14 @@
   <!-- TODO: Combine all checkboards to one image -->
   <!-- TODO: Combine obstacles to one sheet and use clipping -->
   <!-- TODO: Combine prizes, obstacles, and logo -->
+  <!-- TODO: Improve all images -->
   <title>Triple Dare - The Web's Messiest Challenge!</title>
   <link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Open+Sans:600" />
   <!-- http://www.quirksmode.org/css/quirksmode.html -->
   <!-- TODO: Compress and minify all CSS to one sheet -->
   <!-- TODO: Same story for JS -->
   <!-- TODO: Take only what you need from Normalize.css -->
-	<link rel="stylesheet" type="text/css" media="all" href="public/normalize.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="public/reset.css"/>
 	<link rel="stylesheet" type="text/css" media="all" href="public/index.css"/>
 	<link rel="stylesheet" type="text/css" media="all" href="public/debug.css"/>
   <!-- TODO: Favicon -->
@@ -30,41 +31,71 @@
   </nav>
   <!-- TODO: Document media query large, medium, small, ultra small -->
   <header id="topSection">
-    <div id="topContent">
-      <!-- TODO: Placeholder for navBar (if we change font-size of navBar) -->
-      <div id="navBarPlaceholder">&nbsp;</div>
-      <!-- TODO: Wrap in SVG -->
-      <!-- TODO: Fallback with image -->
-      <hgroup>
-        <h1>Triple Dare</h1>
-        <!-- TODO: Should this be capitalized via CSS or not? -->
-        <h2>The Web&#39;s messiest challenge!</h2>
-        <h3>Airing Thursdays on the Knucklelodeon Network&trade;</h3>
-      </hgroup>
-    </div>
+    <!-- TODO: Placeholder for navBar (if we change font-size of navBar) -->
+    <div id="navBarPlaceholder">&nbsp;</div>
+    <!-- TODO: Wrap in SVG -->
+    <!-- TODO: Fallback with image -->
+    <hgroup>
+      <h1><img src="public/images/logo.png" alt="Triple Dare"/></h1>
+      <!-- TODO: Should this be capitalized via CSS or not? -->
+      <h2>The Web&#39;s messiest challenge!</h2>
+      <h3>Airing Thursdays on the Knucklelodeon Network&trade;</h3>
+    </hgroup>
   <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
   </header>
   <section id="obstaclesSection">
-    <div id="obstaclesContent">
   <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
+    <header id="obstaclesContent">
     <!-- TODO: (selector):after Checkboard -->
     <!-- TODO: Handle media query for checkerboard? -->
     <!-- TODO: Try to do the checkboard via CSS gradients? -->
       <h2>Obstacles</h2>
+    </header>
+    <article>
       <!-- TODO: Media query large: 3x2 vertical + aside -->
       <!-- TODO: Media query small: 3x2 vertical, no aside -->
       <!-- TODO: Media query ultra small: 6x1 vertical, no aside -->
-      <div id="obstaclesButtons">
+      <ul id="obstaclesButtons">
         <!-- TODO: Put in SVG/image fallback for each button -->
         <!-- TODO: Image fallbacks should be in PNG sprite -->
         <!-- TODO: Add rollover/focus for buttons -->
-        <button id="theTank">The Tank</button>
-        <button id="sundaeSlide">Sundae Slide</button>
-        <button id="humanHamsterWheel">Human Hamster Wheel</button>
-        <button id="downTheHatch">Down the Hatch</button>
-        <button id="pickIt">Pick It!</button>
-        <button id="theWringer">The Wringer</button>
-      </div>
+        <li id="theTank">
+          <figure>
+            <img src="public/images/the_tank.png" alt="The Tank"/>
+            <figcaption>The Tank</figcaption>
+          </figure>
+        </li>
+        <li id="sundaeSlide">
+          <figure>
+            <img src="public/images/sundae_slide.png" alt="Sundae Slide"/>
+            <figcaption>Sundae Slide</figcaption>
+          </figure>
+        </li>
+        <li id="humanHamsterWheel">
+          <figure>
+            <img src="public/images/human_hamster_wheel.png" alt="Human Hamster Wheel"/>
+            <figcaption>Human Hamster Wheel</figcaption>
+          </figure>
+        </li>
+        <li id="downTheHatch" class="featuredObstacle">
+          <figure>
+            <img src="public/images/down_the_hatch.png" alt="Down the Hatch"/>
+            <figcaption>Down the Hatch</figcaption>
+          </figure>
+        </li>
+        <li id="pickIt">
+          <figure>
+            <img src="public/images/pick_it.png" alt="Pick It!"/>
+            <figcaption>Pick It!</figcaption>
+          </figure>
+        </li>
+        <li id="theWringer">
+          <figure>
+            <img src="public/images/the_wringer.png" alt="The Wringer"/>
+            <figcaption>The Wringer</figcaption>
+          </figure>
+        </li>
+      </ul>
       <div id="obstaclesDescription">
         <figure>
           <!-- TODO: CSS transform rotate -->
@@ -72,64 +103,73 @@
           <!-- TODO: CSS Drop shadow text -->
           <figcaption><h3>Down the Hatch</h3><h4>6ft slide covered in gunk!</h4></figcaption>
           <!-- TODO: Insert default image here -->
-          <img src="#" alt="Down the Hatch"/>
+          <img src="public/images/down_the_hatch.png" alt="Down the Hatch"/>
         </figure>
       </div>
-    </div>
+    </article>
   <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
   </section>
   <section id="prizesSection">
-    <div id="prizesContent">
-    <!-- TODO: Use (selector):after OR box-shadow? for top darkening -->
+  <!-- TODO: Use (selector):after OR box-shadow? for top darkening -->
+    <header>
       <!-- TODO: (selector):after Checkboard -->
       <!-- TODO: Try to do the checkboard via CSS gradients? -->
       <!-- TODO: CSS Drop shadow text -->
       <h2>Prizes</h2>
+    </header>
+    <article>
       <!-- TODO: Media query large: 2x2 normal -->
       <!-- TODO: Media query small: 4x1 normal -->
       <!-- TODO: Media query ultra small: 4x1 smaller images -->
-      <div id="firstPrizeColumn" class="prizeColumn">
-        <!-- TODO: Make a lightbox for each figure? OR Link to somewhere -->
-        <!-- TODO: Use SVG with fallback images (this will require 2 sheets for different media sizes) -->
-        <figure id="spaceCamp" class="prize">
-          <!-- TODO: Insert spacecamp image here -->
-          <!-- TODO: CSS box-shadow (cross-browser) -->
-          <img src="#" alt="A trip to Space Camp!"/>
-          <figcaption>A trip to Space Camp!</figcaption>
-        </figure>
-        <figure id="casioKeyboard" class="prize">
-          <!-- TODO: Insert casio image here -->
-          <!-- TODO: CSS box-shadow (cross-browser) -->
-          <img src="#" alt="A Casio Rapman keyboard!"/>
-          <figcaption>A Casio Rapman keyboard!</figcaption>
-        </figure>
-      </div>
-      <div id="lastPrizeColumn" class="prizeColumn">
-        <figure id="nashSkateboard" class="prize">
-          <!-- TODO: Insert nash skateboard image here -->
-          <!-- TODO: CSS box-shadow (cross-browser) -->
-          <img src="#" alt="A Nash skateboard!"/>
-          <figcaption>A Nash skateboard!</figcaption>
-        </figure>
-        <figure id="tvVcrCombo" class="prize">
-          <!-- TODO: Insert tv image here -->
-          <!-- TODO: CSS box-shadow (cross-browser) -->
-          <img src="#" alt="A 13 inch TV/VCR combo!"/>
-          <!-- TODO: Figure out komikaText mystery -->
-          <figcaption>A 13 inch TV/VCR combo!</figcaption>
-        </figure>
-      </div>
-    </div>
+      <ul id="prizes">
+        <li>
+          <!-- TODO: Make a lightbox for each figure? OR Link to somewhere -->
+          <!-- TODO: Use SVG with fallback images (this will require 2 sheets for different media sizes) -->
+          <figure id="spaceCamp" class="prize">
+            <!-- TODO: Insert spacecamp image here -->
+            <!-- TODO: CSS box-shadow (cross-browser) -->
+            <img src="public/images/space_camp.png" alt="A trip to Space Camp!"/>
+            <figcaption>A trip to Space Camp!</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure id="casioKeyboard" class="prize">
+            <!-- TODO: Insert casio image here -->
+            <!-- TODO: CSS box-shadow (cross-browser) -->
+            <img src="public/images/casio_keyboard.png" alt="A Casio Rapman keyboard!"/>
+            <figcaption>A Casio Rapman keyboard!</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure id="nashSkateboard" class="prize">
+            <!-- TODO: Insert nash skateboard image here -->
+            <!-- TODO: CSS box-shadow (cross-browser) -->
+            <img src="public/images/nash_skateboard.png" alt="A Nash skateboard!"/>
+            <figcaption>A Nash skateboard!</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure id="tvVcrCombo" class="prize">
+            <!-- TODO: Insert tv image here -->
+            <!-- TODO: CSS box-shadow (cross-browser) -->
+            <img src="public/images/tv_vcr_combo.png" alt="A 13 inch TV/VCR combo!"/>
+            <!-- TODO: Figure out komikaText mystery -->
+            <figcaption>A 13 inch TV/VCR combo!</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </article>
   <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
   </section>
   <section id="contestantSection">
   <!-- TODO: Use (selector):after OR box-shadow? for top darkening -->
-    <div id="contestantContent">
+    <header>
       <!-- TODO: (selector):after Checkboard -->
       <!-- TODO: Try to do the checkboard via CSS gradients? -->
       <!-- TODO: CSS Drop shadow text -->
       <h2>Be a Contestant</h2>
-      <!-- TODO: Should we be nesting fieldset inside of section? -->
+    </header>
+    <article>
       <!-- TODO: Media query large: Normal + aside -->
       <!-- TODO: Media query small: Normal + no-aside -->
       <!-- TODO: Media query ultra small: Line break for select boxes, everything else thinner + no-aside -->
@@ -174,41 +214,37 @@
           <!-- TODO: CSS Drop shadow on text -->
           <span id="contestantTimer" class="timer">60</span>
           <figcaption>
-            <!-- TODO: CSS Capitalize -->
             <!-- TODO: CSS Drop shadow text -->
             The clock is ticking!
           </figcaption>
         </figure>
       </aside>
-    </div>
+    </article>
   </section>
   <!-- TODO: Media query large: Normal -->
   <!-- TODO: Media query small: Addresses and paragraphs center and break between -->
   <!-- TODO: Media query ultra small: Same story as small -->
   <footer id="footerSection">
-    <div id="footerContent">
-      <!-- TODO: Backdrop with image -->
-      <hr/>
-      <img src="#" alt="Knucklelodeon Network Logo"/>
-      <!-- TODO: Insert KN image and negative margin it in -->
-      <div id="termsAndConditions">
-        <h3>The Knucklelodeon Network</h3>
-        <p id="notAffiliated">The Knucklelodeon Network is not affiliated with Nickelodeon, nor is it an actual television network</p>
-        <p id="contestantConsent">Triple Dare contestants consent to potential physical bodily harm, like being burried alive by a giant waffle.</p>
-      </div>
-      <div id="studioInfo">
-        <h3>Visit Our Studios</h3>
-        <!-- TODO: Div's or section's? -->
-        <address id="caAddress">11 Slime Time Way<br/>Sacramento, CA 94203</address>
-        <address id="flAddress">329 Gunk Road<br/>Jacksonville, FL 32099</address>
-      </div>
-      <hr/>
-      <div id="creativeCommons">
-        This design is licensed under a <cite>Creative Commons Attribution-NonCommercial-NoDerivs 3.0 License</cite>
-        <br/>
-        <!-- TODO: Insert CC image (local-hosted only) [put in sprite sheet] -->
-        <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img src="#" alt="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 License"/></a>
-      </div>
+    <hr/>
+    <img src="public/images/kn.png" alt="Knucklelodeon Network Logo"/>
+    <!-- TODO: Insert KN image and negative margin it in -->
+    <div id="termsAndConditions">
+      <h3>The Knucklelodeon Network</h3>
+      <p id="notAffiliated">The Knucklelodeon Network is not affiliated with Nickelodeon, nor is it an actual television network</p>
+      <p id="contestantConsent">Triple Dare contestants consent to potential physical bodily harm, like being burried alive by a giant waffle.</p>
+    </div>
+    <div id="studioInfo">
+      <h3>Visit Our Studios</h3>
+      <!-- TODO: Div's or section's? -->
+      <address id="caAddress">11 Slime Time Way<br/>Sacramento, CA 94203</address>
+      <address id="flAddress">329 Gunk Road<br/>Jacksonville, FL 32099</address>
+    </div>
+    <hr/>
+    <div id="creativeCommons">
+      This design is licensed under a <cite>Creative Commons Attribution-NonCommercial-NoDerivs 3.0 License</cite>
+      <br/>
+      <!-- TODO: Insert CC image (local-hosted only) [put in sprite sheet] -->
+      <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img src="public/images/cc_license.png" alt="Creative Commons Attribution-NonCommercial-NoDerivs 3.0 License"/></a>
     </div>
   </footer>
   <!-- TODO: If the checkerboard:after doesn't work, try fieldset + legend -->
