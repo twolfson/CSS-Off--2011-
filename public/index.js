@@ -119,4 +119,12 @@
     }(obstacle)));
   }
 
+  // TODO: Fancy recolor of inputs
+    /* TODO: Overlay and style with JS */
+  /* http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ */
+  // TODO: Validation?
+  // TODO: Timer
+  // TODO: Smooth scroll
+  // TODO: Opacity switch for navbar
+  // TODO: Submit button hover state of yellow bg + orange font
 }(document));

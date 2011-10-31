@@ -1,9 +1,4 @@
-<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7"> <![endif]-->
-<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
-<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
-<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
-<!--[if gt IE 9]>  <html> <![endif]-->
-<!--[if !IE]><!--> <!doctype html>             <!--<![endif]-->
+<!doctype html>
 <head>
   <!-- TODO: Browser shots for Mac and Linux testing -->
   <!-- TODO: Don't forget to w3c me -->
@@ -137,8 +132,8 @@
             <figcaption>A trip to Space Camp!</figcaption>
           </figure>
         </li>
-        <li id="nashSkateboard" eclass="prize">
-          <figur>
+        <li id="nashSkateboard" class="prize">
+          <figure>
             <img src="public/images/nash_skateboard.png" alt="A Nash skateboard!"/>
             <figcaption>A Nash skateboard!</figcaption>
           </figure>
@@ -184,14 +179,17 @@
           <input id="yourName" name="yourName" type="text" value="Your Name" required="required"/>
           <input id="emailAddress" name="emailAddress" type="text" value="Email Address" required="required"/>
           <input id="teamName" name="teamName" type="text" value="Team Name" required="required"/>
-          <!-- TODO: I think I saw this style of dropdown on CSS Tricks -->
-          <select id="teamColor" name="teamColor" required="required">
-            <!-- TODO: Disallow this as default submit option -->
-            <!-- TODO: Did they ever have any other team colors? -->
-            <option selected="selected" value="">Team Color</option>
-            <option>Red</option>
-            <option>Blue</option>
-          </select>
+          <div id="teamColorContainer">
+            <select id="teamColor" name="teamColor" class="styled" required="required">
+              <!-- TODO: Disallow this as default submit option -->
+              <!-- TODO: Did they ever have any other team colors? -->
+              <option selected="selected" value="">Team Color</option>
+              <option>Red</option>
+              <option>Blue</option>
+            </select>
+            <span>Team Color</span>
+            <img src="public/images/green_arrow.gif" alt="Team Color"/>
+          </div>
           <select id="gender" name="gender" required="required">
             <option selected="selected" value="">Gender</option>
             <option>Male</option>

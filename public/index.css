@@ -39,7 +39,7 @@
   color: #FFF;
 }
 
-input, select, option {
+{
   color: #000;
 }
 
@@ -72,7 +72,10 @@ input, select, option {
 #prizesSection figcaption,
 #contestantSection h2,
 #submitEntry span,
-#contestantSection figcaption {
+#contestantSection figcaption,
+input, select, option,
+#teamColorContainer span,
+#genderContainer span {
   font-family: KomikaTitle-PaintRegular, sans-serif;
 }
 
@@ -104,8 +107,10 @@ body {
 }
 
 /* Orange background */
-#obstaclesSection {
-  /* TODO: Add noise */
+#obstaclesSection,
+input, select, option,
+/*#contestantSection*/ #teamColorContainer,
+/*#contestantSection*/ #genderContainer {
   background: #FE6638 url('images/orange_texture.png');
 }
 
@@ -159,6 +164,7 @@ body {
   _position: relative;
   _left: -3px;
   _margin-right: -3px;
+  /* TODO: Move to .ie6 */
 }
 
 /* Clearfix */
@@ -448,23 +454,80 @@ body {
 }
 
 #contestantSection input,
-#contestantSection select {
+#contestantSection select,
+/*#contestantSection*/ #teamColorContainer,
+/*#contestantSection*/ #genderContainer {
   height: 50px;
   width: 100%;
+
   /* TODO: Deal with IE6 */
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   margin-bottom: 16px;
-  /* TODO: Overlay and style with JS */
-  /* http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ */
+
+  /* TODO: Cross-browser border radius */
+  border: 0;
+  border-radius: 5px;
 }
 
-#contestantSection #teamColor {
+#contestantSection input,
+#contestantSection select,
+#contestantSection option,
+#teamColorContainer,
+#genderContainer {
+  font-size: 1.1em;
+  padding-left: .4em;
+}
+
+#contestantSection select {
+  padding-top: .35em;
+  padding-bottom: .35em;
+}
+
+#teamColorContainer span,
+#genderContainer span {
+  display: block;
+  margin-top: .8em;
+}
+
+#teamColorContainer img,
+#genderContainer img {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  /* TODO: Cross-browser border radius */
+  border: 0;
+  border-radius: 5px;
+}
+
+
+#contestantSection select.styled {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  /* with ie filter */
+}
+
+/*#contestantSection*/ #teamColorContainer,
+/*#contestantSection*/ #genderContainer {
+  position: relative;
+}
+
+/*#contestantSection*/ #teamColorContainer {
+  float: left;
+}
+
+#contestantSection #teamColor,
+#contestantSection #teamColorContainer {
   width: 220px;
 }
 
-#contestantSection #gender {
+#contestantSection #gender,
+#contestantSection #genderContainer {
   display: block;
   float: right;
   width: 140px;
@@ -499,11 +562,10 @@ body {
 /*#contestantSection*/ #contestantTimer {
   background: url('images/timer_backdrop.png') top center no-repeat;
   height: 236px; /* 329 - 93 */
-  width: 386px; 
+  width: 386px;
   margin: 0 32px 32px auto; /* right = (470 - 386) / 2 - 10 */
   padding: 93px 0 0 10px;
   font-size: 9em;
-  
 }
 
 #timerBlock figcaption {
