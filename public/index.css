@@ -355,9 +355,14 @@ body {
 
 #obstaclesDescription h3 {
   font-size: 2.2em;
+  line-height: 1.2em;
   padding-top: 1.4em;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.2em;
   /* TODO: Make sure this works with each text combo */
+}
+
+#obstaclesDescription h4 {
+  line-height: 1.4em;
 }
 
 #obstaclesDescription img {
@@ -476,6 +481,7 @@ body {
   font-size: 1.5em;
   padding-bottom: 40px;
   cursor: pointer;
+  /* TODO: Create smaller splat for IE */
 }
 
 #submitEntry span {
