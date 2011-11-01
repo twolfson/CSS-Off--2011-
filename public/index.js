@@ -7,12 +7,16 @@
   function getScrollTop() {
     var body = doc.body,
         docElt = document.documentElement;
-    if (body && body.scrollTop) return body.scrollTop;
-    if (docElt && docElt.scrollTop) return docElt.scrollTop;
-    if (win.pageYOffset) return wind.pageYOffset;
+    if (body && body.scrollTop) {
+      return body.scrollTop;
+    } if (docElt && docElt.scrollTop) {
+      return docElt.scrollTop;
+    } if (win.pageYOffset) {
+      return win.pageYOffset;
+    }
     return 0;
   }
-  var scrollSpeed = 10,
+  var scrollSpeed = 3,
       lastScrollTimeout;
 
   /**
@@ -150,9 +154,10 @@
       'getYOffset': function () {
         // Get the offset of this element and all of its parents
         var offset = elt.offsetTop,
-            offsetParent = elt;
-        while ( offsetParent = offsetParent.offsetParent) {
+            offsetParent = elt.offsetParent;
+        while ( offsetParent ) {
           offset += offsetParent.offsetTop;
+          offsetParent = offsetParent.offsetParent;
         }
 
         // Disabled to compensate for media queries
@@ -181,9 +186,9 @@
         }
 
         // If the element is below our current offset
-        if( eltOffset > scrollTop) {
+        if( eltOffset > scrollTop ) {
           // And the element is not in view
-          if( scrollBarHeight - eltOffset > innerHeight) {
+          if( scrollBarHeight - eltOffset > innerHeight ) {
             scrollTop += Math.ceil((eltOffset - scrollTop)/scrollSpeed);
           // And the element is in view
           } else {
@@ -197,7 +202,7 @@
 
         // Asynchronously loop scroll
         if( scrollTop !== eltOffset ) {
-          lastScrollTimeout = setTimeout( function () { that.smoothScrollTo(); }, 15);
+          lastScrollTimeout = setTimeout( function () { that.smoothScrollTo(); }, 50);
         }
       }
     };
@@ -243,24 +248,26 @@
       descElt = $(obstacleDescription.getChildrenByTagName('h4')[0]),
       imgElt = $(obstacleDescription.getChildrenByTagName('img')[0]);
 
+  function getObstacleFn(obstacle) {
+    return function () {
+      // Change the obstacleDescription
+      var name = obstacle.name;
+      nameElt.setText( name );
+      descElt.setText( obstacle.desc );
+      imgElt.set('alt', name);
+      imgElt.set('src', obstacle.img);
+
+      // Display the new featured figure
+      featuredObstacle.set('className', '');
+      obstacle.elt.set('className', 'featuredObstacle');
+      featuredObstacle = obstacle.elt;
+    };
+  }
+
   for( i = obstacles.length; i--; ) {
     obstacle = obstacles[i];
     // Closure and bind
-    obstacle.elt.bind('onclick', (function (obstacle) {
-      return function () {
-        // Change the obstacleDescription
-        var name = obstacle.name;
-        nameElt.setText( name );
-        descElt.setText( obstacle.desc );
-        imgElt.set('alt', name);
-        imgElt.set('src', obstacle.img);
-
-        // Display the new featured figure
-        featuredObstacle.set('className', '');
-        obstacle.elt.set('className', 'featuredObstacle');
-        featuredObstacle = obstacle.elt;
-      };
-    }(obstacle)));
+    obstacle.elt.bind('onclick', getObstacleFn(obstacle));
   }
 
   // Select box overlay
@@ -281,6 +288,12 @@
     return $(select.get('options')[select.get('selectedIndex')]).getText();
   }
 
+  function getUpdateSelectFn(span, select) {
+    return function () {
+      span.setText( getSelectText(select) );
+    };
+  }
+
   for( i = selectArr.length; i--; ) {
     select = selectArr[i];
     // Wrap in a CSS'd container
@@ -296,13 +309,9 @@
     img.set('src', 'public/images/green_texture.png');
 
     // Create text change function for onchange
-    updateTextFn = (function (span, select) {
-      return function () {
-        span.setText( getSelectText(select) );
-      };
-    }(span, select));
+    updateTextFn = getUpdateSelectFn(span, select);
 
-    // Update the text and bind to onchange
+    // Execute and bind to onchange
     updateTextFn();
     select.bind('onchange', updateTextFn);
   }
@@ -311,23 +320,83 @@
   // Credit to http://www.dezinerfolio.com/2007/08/08/df-javascript-smooth-scroll
   var navLinkArr = $('navBar').getChildrenByTagName('a'),
       navLink,
+      targetId,
       targetElt;
+
+  function getSmoothScrollFn(targetElt) {
+    return function (e) {
+      e.preventDefault();
+      targetElt.smoothScrollTo();
+    };
+  }
 
   for( i = navLinkArr.length; i--; ) {
     navLink = $(navLinkArr[i]);
     targetId = navLink.get('href').split('#')[1];
     targetElt = $( targetId );
-    navLink.bind('onclick', (function (targetElt) {
-      return function (e) {
-        e.preventDefault();
-        targetElt.smoothScrollTo();
-      };
-    }(targetElt)));
+    navLink.bind('onclick', getSmoothScrollFn(targetElt));
   }
+
+  // Registration timer
+  var timer = $('contestantTimer');
+
+  function countdownContestantTimer() {
+    var time = +timer.getText();
+    if( time > 0 ) {
+      timer.setText( time - 1 );
+      setTimeout(countdownContestantTimer, 1000);
+    }
+  }
+
+  // Async loop that checks if contestantTimer is visible
+  function asyncContestantTimer() {
+    var innerHeight = win.innerHeight || doc.documentElement.clientHeight,
+        scrollTop = getScrollTop(),
+        eltOffset = timer.getYOffset();
+
+    if( scrollTop === 0 ) {
+      setTimeout(asyncContestantTimer, 100);
+      return;
+    }
+
+    // If it is in the viewport, start the timer
+    if( innerHeight + scrollTop > eltOffset ) {
+      setTimeout(countdownContestantTimer, 1000);
+    } else {
+    // Otherwise, continue async loop
+      setTimeout(asyncContestantTimer, 500);
+    }
+  }
+  asyncContestantTimer();
+
+  // Opacity switch for navBar
+  var navBar = $('navBar'),
+      alreadyAtTop;
+
+  // Async loop that checks if nav bar is at the top
+  function asyncNavTimer() {
+    var scrollTop = getScrollTop(),
+        topBool = (scrollTop < 10),
+        klass;
+
+    // Reduce repaints significantly by touching className less
+    if( alreadyAtTop !== topBool ) {
+      // By default, set as opaque
+      klass = '';
+      // If we are at the top, make it translucent
+      if( topBool === true ) {
+        klass = 'translucent';
+      }
+
+      alreadyAtTop = topBool;
+      navBar.set('className', klass);
+    }
+
+    setTimeout( asyncNavTimer, 100 );
+  }
+  asyncNavTimer();
 
   // TODO: Add :focus state for select boxes
   // TODO: Validation?
-  // TODO: Timer
-  // TODO: Opacity switch for navbar
   // TODO: Submit button hover state of yellow bg + orange font
 }(document, window));

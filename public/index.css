@@ -184,25 +184,24 @@ input, select, option,
   position: fixed;
   top: 0;
   width: 100%;
-  /* TODO: Should text-align center be a property of this or all nav? */
-  text-align: center;
 
-  /* TODO: Opacity off of scroll, but opaque on scroll */
   background: #79b9ce;
-  z-index: 1000;
-/*
-  /* Fallback for browsers without RGBa support *
-  background-color: rgb(15, 40, 48);
-  background-color: rgba(15, 40, 48, 0.05);
-  /* For IE 5.5 - 7*
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0F28300C, endColorstr=#0F28300C);
-  /* For IE 8*
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0F28300C, endColorstr=#0F28300C)";
-*/
   color: #000;
 
-  /* TODO: Should this really be done here? */
+  text-align: center;
   text-transform: uppercase;
+
+  z-index: 1000;
+}
+
+#navBar.translucent {
+  /* Fallback for browsers without RGBa support */
+  background-color: rgb(15, 40, 48);
+  background-color: rgba(15, 40, 48, 0.05);
+  /* For IE 5.5 - 7*/
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0F28300C, endColorstr=#0F28300C);
+  /* For IE 8*/
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0F28300C, endColorstr=#0F28300C)";
 }
 
 #navBar a {
@@ -506,7 +505,7 @@ input, select, option,
   /* TODO: Cross-browser border radius */
   border: 0;
   border-radius: 5px;
-  
+
   height: 50px;
   width: 50px;
   background: url('images/green_arrow.gif') top right no-repeat;
