@@ -480,9 +480,15 @@ input, select, option,
   padding-left: .4em;
 }
 
+/*#contestantSection*/ #teamColorContainer,
+/*#contestantSection*/ #genderContainer {
+  position: relative;
+}
+
 #contestantSection select {
   padding-top: .35em;
   padding-bottom: .35em;
+  cursor: pointer;
 }
 
 #teamColorContainer span,
@@ -500,6 +506,10 @@ input, select, option,
   /* TODO: Cross-browser border radius */
   border: 0;
   border-radius: 5px;
+  
+  height: 50px;
+  width: 50px;
+  background: url('images/green_arrow.gif') top right no-repeat;
 }
 
 
@@ -510,11 +520,6 @@ input, select, option,
   left: 0;
   opacity: 0;
   /* with ie filter */
-}
-
-/*#contestantSection*/ #teamColorContainer,
-/*#contestantSection*/ #genderContainer {
-  position: relative;
 }
 
 /*#contestantSection*/ #teamColorContainer {

@@ -15,7 +15,7 @@
     if( (typeof id).toLowerCase() === "string" ) {
       elt = doc.getElementById(id);
     }
-    
+
     return {
       /**
        * Bind event to DOM Level 0 of element (there can only be one)
@@ -24,6 +24,20 @@
        */
       'bind': function (evt, fn) {
         elt[evt] = fn;
+      },
+      /**
+       * Get text of element
+       * @returns {String} str Text to set inside of element
+       */
+      'getText': function () {
+        if (elt.textContent) {
+          return elt.textContent;
+        } else if (elt.innerText) {
+          return elt.innerText;
+        } else if (elt.text) {
+          return elt.text;
+        }
+        return elt.innerHTML;
       },
       /**
        * Set text of element
@@ -49,12 +63,50 @@
         return elt.getElementsByTagName(tag);
       },
       /**
-       * Set a property of elt to str
+       * Get a property of elt
+       * @param {String} prop Property to retrieve
+       * @returns {Mixed} Value of property
+       */
+      'get': function (prop) {
+        return elt[prop];
+      },
+      /**
+       * Set a property of elt
        * @param {String} prop Property to set
        * @param {Mixed} val Value to set
        */
       'set': function (prop, val) {
         elt[prop] = val;
+      },
+      /**
+       * Wrap a elt in a containing div
+       * @returns {Object} $'d containing div
+       */
+      'wrap': function () {
+        var div = doc.createElement('div');
+        elt.parentNode.insertBefore(div, elt);
+        div.appendChild(elt);
+        div.id = elt.id + 'Container';
+        return $(div);
+      },
+      /**
+       * Append given element after element
+       * @param {HTMLElement} appendElt Element to append
+       * @returns {HTMLElement} The element that is objectified
+       */
+      'append': function (appendElt) {
+        elt.appendChild(appendElt);
+        return this;
+      },
+      /**
+       * Create and append a new element to this containing element
+       * @param {String} tag Tag of element to append
+       * @returns {Object} Objectified new element
+       */
+      'appendNew': function (tag) {
+        var newElt = document.createElement(tag);
+        this.append(newElt);
+        return $(newElt);
       }
     };
   };
@@ -110,7 +162,7 @@
         descElt.setText( obstacle.desc );
         imgElt.set('alt', name);
         imgElt.set('src', obstacle.img);
-        
+
         // Display the new featured figure
         featuredObstacle.set('className', '');
         obstacle.elt.set('className', 'featuredObstacle');
@@ -119,9 +171,50 @@
     }(obstacle)));
   }
 
-  // TODO: Fancy recolor of inputs
-    /* TODO: Overlay and style with JS */
-  /* http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/ */
+  // Select box overlay
+  // Credit to http://ryanfait.com/resources/custom-checkboxes-and-radio-buttons/
+  var selectArr = [$('teamColor'), $('gender')],
+      select,
+      container,
+      span,
+      img,
+      updateTextFn;
+
+  /**
+   * Takes in $(select) and returns current text
+   * @param {Object} select Objectifieid select box
+   * @returns {String|undefined} Text of select box
+   */
+  function getSelectText(select) {
+    return $(select.get('options')[select.get('selectedIndex')]).getText();
+  }
+
+  for( i = selectArr.length; i--; ) {
+    select = selectArr[i];
+    // Wrap in a CSS'd container
+    container = select.wrap();
+
+    // Add opacity class
+    select.set('className', 'styled');
+
+    // Append span and img
+    span = container.appendNew('span');
+    img = container.appendNew('img');
+    img.set('alt', getSelectText(select));
+    img.set('src', 'public/images/green_texture.png');
+
+    // Create text change function for onchange
+    updateTextFn = (function (span, select) {
+      return function () {
+        span.setText( getSelectText(select) );
+      };
+    }(span, select));
+
+    // Update the text and bind to onchange
+    updateTextFn();
+    select.bind('onchange', updateTextFn);
+  }
+
   // TODO: Validation?
   // TODO: Timer
   // TODO: Smooth scroll

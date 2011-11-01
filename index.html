@@ -168,9 +168,6 @@
       <!-- TODO: Media query ultra small: Line break for select boxes, everything else thinner + no-aside -->
       <form id="contestantForm" action="./index.html" method="get">
         <fieldset>
-        <!-- TODO: Remove border from fieldset -->
-          <!-- TODO: CSS Coloring -->
-          <!-- TODO: CSS Capitalize -->
           <!-- TODO: All inputs must have non-default value (except photo url?) -->
           <!-- TODO: Use outline: red for erroring and maybe red bubble too -->
           <!-- TODO: Use .defaultValue and.defaultSelected for default value -->
@@ -179,17 +176,12 @@
           <input id="yourName" name="yourName" type="text" value="Your Name" required="required"/>
           <input id="emailAddress" name="emailAddress" type="text" value="Email Address" required="required"/>
           <input id="teamName" name="teamName" type="text" value="Team Name" required="required"/>
-          <div id="teamColorContainer">
-            <select id="teamColor" name="teamColor" class="styled" required="required">
+            <select id="teamColor" name="teamColor" required="required">
               <!-- TODO: Disallow this as default submit option -->
-              <!-- TODO: Did they ever have any other team colors? -->
               <option selected="selected" value="">Team Color</option>
               <option>Red</option>
               <option>Blue</option>
             </select>
-            <span>Team Color</span>
-            <img src="public/images/green_arrow.gif" alt="Team Color"/>
-          </div>
           <select id="gender" name="gender" required="required">
             <option selected="selected" value="">Gender</option>
             <option>Male</option>
