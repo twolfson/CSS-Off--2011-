@@ -396,7 +396,6 @@
   }
   asyncNavTimer();
 
-  // TODO: Add :focus state for select boxes
   // TODO: Validation?
   // TODO: Submit button hover state of yellow bg + orange font
 }(document, window));

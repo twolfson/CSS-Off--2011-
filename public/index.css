@@ -508,7 +508,14 @@ input, select, option,
 
   height: 50px;
   width: 50px;
-  background: url('images/green_arrow.gif') top right no-repeat;
+  background: url('images/green_arrow.gif') 0 0 repeat;
+}
+
+#teamColor:hover + * + img,
+#teamColor:focus + * + img,
+#gender:hover + * + img,
+#gender:focus + * + img {
+  background-position: 0 50px;
 }
 
 
