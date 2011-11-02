@@ -1,6 +1,3 @@
-/* TODO: Don't forget to w3c me */
-/* TODO: Support IE6 text-shadows [not enough time] */
-/* TODO: Bind yellow bg/orange font to inputs currently being edited [not enough time] */
 /* Font faces */
 @font-face {
   font-family: 'KomikaTitle-PaintRegular';
@@ -57,9 +54,7 @@ body {
 #contestantSection header,
 #contestantSection article,
 #footerSection {
-  max-width: 940px;
-  /* TODO: Deal with IE6 width issue */
-  width: 100%;
+  width: 940px;
   margin-left: auto;
   margin-right: auto;
   clear: both;
@@ -231,7 +226,28 @@ input, select, option,
   -o-transform:      rotate(-8deg);
 }
 
-/* TODO: Common-ize header heights and checkerboards */
+/* '40 pt' font */
+#topSection h2,
+#obstaclesSection h2,
+#obstaclesDescription h3,
+#prizesSection h2,
+#contestantSection h2,
+#timerBlock figcaption {
+  font-size: 40px;
+}
+
+/* Yellow checkerboard bg */
+#obstaclesSection h2,
+#prizesSection h2,
+#contestantSection h2 {
+  background-image: url('images/yellow_checkerboard.png');
+  background-position: top right;
+  background-repeat: no-repeat;
+
+    background-position: 280px top;
+}
+
+/* TODO: Rearrange these classes */
 
 /* Specific classes */
 
@@ -259,7 +275,7 @@ input, select, option,
 #navBar a {
   color: #FFF;
   text-decoration: none;
-  margin: 0 1.74em;
+  margin: 0 1.7em;
 }
 
 #navBar a:hover {
@@ -291,14 +307,14 @@ input, select, option,
 }
 
 #topSection h2 {
-  font-size: 2.8em;
+  line-height: 1.2em;
   letter-spacing: .1em;
   margin-top: 40px;
+  margin-bottom: .4em;
 }
 
 #topSection h3 {
   font-size: 1.4em;
-  margin-top: 12px;
 }
 
 /* obstaclesSection specific */
@@ -309,8 +325,7 @@ input, select, option,
 }
 
 #obstaclesSection h2 {
-  font-size: 40px;
-  background: url('images/obstacles_checkerboard.png') top right no-repeat;
+  background-position: 280px top;
   margin-bottom: 57px;
 }
 
@@ -386,7 +401,6 @@ input, select, option,
 }
 
 #obstaclesDescription h3 {
-  font-size: 2.2em;
   line-height: 1.2em;
   padding-top: 1.4em;
   padding-bottom: 0.2em;
@@ -411,10 +425,8 @@ input, select, option,
   padding-bottom: 144px;
 }
 
-/* TODO: Merge these checkerboard things */
 #prizesSection h2 {
-  font-size: 40px;
-  background: url('images/prizes_checkerboard.png') top right no-repeat;
+  background-position: right top;
   margin-bottom: 85px;
 }
 
@@ -438,6 +450,10 @@ input, select, option,
   margin-top: 1em;
 }
 
+#prizesSection a {
+  text-decoration: none;
+}
+
 #prizesSection #casioKeyboard,
 #prizesSection #tvVcrCombo {
   position: absolute;
@@ -445,7 +461,6 @@ input, select, option,
   left: 0;
 }
 
-/* TODO: Link prizes to websites? NASA, Tony Hawk's Pro Skater, Amazon, Amazon */
 #casioKeyboard figcaption {
   margin-top: 2.5em;
 }
@@ -462,8 +477,7 @@ input, select, option,
 }
 
 #contestantSection h2 {
-  font-size: 40px;
-  background: url('images/contestant_checkerboard.png') top right no-repeat;
+  background-position: 420px bottom;
   margin-bottom: 85px;
 }
 
@@ -481,10 +495,10 @@ input, select, option,
   height: 50px;
   width: 100%;
 
-  /* TODO: Deal with IE6 */
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+
   margin-bottom: 16px;
 }
 
@@ -584,10 +598,6 @@ input, select, option,
   font-size: 9em;
 }
 
-#timerBlock figcaption {
-  font-size: 2.4em;
-}
-
 /* footerSection specific */
 #footerSection {
   text-align: center;
@@ -650,7 +660,37 @@ input, select, option,
 }
 
 /* Media queries */
-@media (max-width: 470px) {
+@media (max-width: 939px) {
+  #topSection hgroup,
+  #obstaclesSection header,
+  #obstaclesSection article,
+  #prizesSection header,
+  #prizesSection article,
+  #contestantSection header,
+  #contestantSection article,
+  #footerSection {
+    width: 100%;
+  }
+
+  /* TODO: Checkerboard logic */
+  #obstaclesSection #obstaclesButtons {
+    width: 692px; /* 220 * 3 + 16 * 2 */
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  #obstaclesButtons #sundaeSlide,
+  #obstaclesButtons #downTheHatch {
+    margin-right: 16px;
+  }
+
+  #obstaclesButtons #humanHamsterWheel {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 469px) {
   /* Obstacle section */
   #obstaclesButtons {
     width: 100%;
@@ -684,4 +724,40 @@ input, select, option,
   }
 
   /* TODO: Footer */
+}
+
+/* Nav bar width issues */
+@media (max-width: 639px) {
+  /* Nav bar */
+  #navBar {
+    position: static;
+  }
+  #navBarPlaceholder {
+    display: none;
+  }
+
+  #topLink {
+    display: none;
+  }
+}
+
+/* Header width issues */
+@media (max-width: 559px) {
+  #topSection h1 {
+    width: 100%;
+    /* This is what happens when not enough testing is done */
+    padding-left: 71px;
+  }
+  #topSection h1 img {
+    margin-left: -142px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Nav bar */
+  #obstacleLink,
+  #prizesLink,
+  #contestantLink {
+    display: block;
+  }
 }

@@ -395,7 +395,4 @@
     setTimeout( asyncNavTimer, 100 );
   }
   asyncNavTimer();
-
-  // TODO: Validation?
-  // TODO: Submit button hover state of yellow bg + orange font
 }(document, window));
