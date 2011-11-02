@@ -18,6 +18,12 @@
 	<link rel="stylesheet" href="public/debug.css" type="text/css" media="all" />
   <link rel="shortcut icon" href="public/images/favicon.ico" />
 
+  <!-- TODO: SUPER TOP PRIORITY: Add in remaining drop shadows/borders -->
+  <!-- TODO: TOP PRIORITY: Consolidate CSS classes and reduce image sizes -->
+  <!-- TODO: TOP PRIORITY: Cross browser test -->
+  <!-- TODO: TOP PRIORITY: Media Queries -->
+  <!-- TODO: Support IE6 -->
+
   <!-- TODO: Remove from prod -->
   <script src="public/reload_with_collector.js"></script>
   <!-- Minified library - http://www.iecss.com/print-protector/javascript/iepp.1-6-2.min.js -->
@@ -26,7 +32,6 @@
   <[/if IE]-->
 </head>
 <body>
-  <!-- TODO: Give opacity -->
   <!-- TODO: Add hidable functionality -->
   <nav id="navBar" role="navigation">
     <a href="#obstaclesSection">Obstacles</a>
@@ -36,24 +41,15 @@
   </nav>
   <!-- TODO: Document media query large, medium, small, ultra small -->
   <header id="topSection">
-    <!-- TODO: Placeholder for navBar (if we change font-size of navBar) -->
     <div id="navBarPlaceholder">&nbsp;</div>
-    <!-- TODO: Wrap in SVG -->
-    <!-- TODO: Fallback with image -->
     <hgroup>
       <h1><img src="public/images/logo.png" alt="Triple Dare"/></h1>
-      <!-- TODO: Should this be capitalized via CSS or not? -->
       <h2>The Web&#39;s messiest challenge!</h2>
       <h3>Airing Thursdays on the Knucklelodeon Network&trade;</h3>
     </hgroup>
-  <!-- TODO: Use (selector):after OR box-shadow? for bottom darkening -->
   </header>
   <section id="obstaclesSection">
-  <!-- TODO: Wrap entire section to limit width of content (this will a lot of padding and give us our noise layer) -->
     <header id="obstaclesContent">
-    <!-- TODO: (selector):after Checkboard -->
-    <!-- TODO: Handle media query for checkerboard? -->
-    <!-- TODO: Try to do the checkboard via CSS gradients? -->
       <h2>Obstacles</h2>
     </header>
     <article>
@@ -61,9 +57,6 @@
       <!-- TODO: Media query small: 3x2 vertical, no aside -->
       <!-- TODO: Media query ultra small: 6x1 vertical, no aside -->
       <ul id="obstaclesButtons">
-        <!-- TODO: Put in SVG/image fallback for each button -->
-        <!-- TODO: Image fallbacks should be in PNG sprite -->
-        <!-- TODO: Add rollover/focus for buttons -->
         <li id="theTank">
           <figure>
             <img src="public/images/the_tank.png" alt="The Tank"/>
@@ -103,8 +96,6 @@
       </ul>
       <div id="obstaclesDescription">
         <figure>
-          <!-- TODO: CSS transform rotate -->
-          <!-- TODO: Figure out how to do backdrop (probably just an image; same as h1) (ideal for SVG) -->
           <!-- TODO: CSS Drop shadow text -->
           <figcaption><h3>Down the Hatch</h3><h4>6ft slide covered in gunk!</h4></figcaption>
           <!-- TODO: Insert default image here -->

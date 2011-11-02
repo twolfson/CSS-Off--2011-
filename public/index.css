@@ -1,4 +1,6 @@
 /* TODO: Don't forget to w3c me */
+/* TODO: Support IE6 text-shadows [not enough time] */
+/* TODO: Bind yellow bg/orange font to inputs currently being edited [not enough time] */
 /* Font faces */
 @font-face {
   font-family: 'KomikaTitle-PaintRegular';
@@ -39,8 +41,9 @@
   color: #FFF;
 }
 
-{
-  color: #000;
+/* IE :hover, :active, and :focus fix */
+body {
+  behavior: url('csshover3.htc');
 }
 
 /* Specific groupings */
@@ -96,7 +99,6 @@ body {
 
 /* Blue splat */
 #topSection {
-  /* TODO: Add noise to splat for ie8 */
   background: url('images/blue_splat.png') center -207px no-repeat;
 }
 
@@ -115,7 +117,6 @@ input, select, option,
 }
 
 /* Yellow background */
-/* TODO: Bind to inputs currently being edited */
 #obstaclesButtons li:hover,
 #obstaclesButtons .featuredObstacle {
   background: #EEF13F url('images/yellow_texture.png');
@@ -123,7 +124,6 @@ input, select, option,
 
 /* Orange font */
 #topSection h2,
-/* TODO: IE Hover */
 #obstaclesButtons li:hover figcaption,
 #obstaclesButtons .featuredObstacle figcaption {
   color: #FE6537;
@@ -149,7 +149,6 @@ input, select, option,
 #contestantSection form,
 /*#footerSection*/ #notAffiliated,
 /*#footerSection*/ #caAddress {
-/* TODO: Add media query for Prizes */
   float: left;
 }
 
@@ -158,13 +157,12 @@ input, select, option,
 #prizesSection #lastPrizeColumn,
 #contestantSection aside,
 /*#footerSection*/ #contestantConsent,
-/*#footerSection*/ #flAddress { /* TODO: Media query for contestant section */
+/*#footerSection*/ #flAddress {
   float: none;
   width: auto;
   _position: relative;
   _left: -3px;
   _margin-right: -3px;
-  /* TODO: Move to .ie6 */
 }
 
 /* Clearfix */
@@ -177,6 +175,64 @@ input, select, option,
   visibility: hidden;
 }
 
+/* Border radius */
+#obstaclesButtons li,
+#contestantSection input,
+#contestantSection select,
+/*#contestantSection*/ #teamColorContainer,
+/*#contestantSection*/ #genderContainer,
+#teamColorContainer img,
+#genderContainer img {
+  border: 0px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* Section border */
+#obstaclesSection,
+#prizesSection,
+#contestantSection,
+#footerSection hr {
+  border-width: 7px 0;
+  border-style: solid;
+}
+
+/* Faded blue border */
+#contestantSection,
+#footerSection hr {
+  border-color: rgb(115, 177, 196);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* White text shdaow */
+#topSection h2 {
+  text-shadow: #FFF 1.74px 2.44px;
+}
+
+/* Black text shdaow */
+#obstaclesSection h2,
+/*#obstaclesSection*/ #obstaclesDescription,
+#prizesSection h2,
+#contestantSection h2,
+#submitEntry span,
+#timerBlock figcaption {
+  /* A quick sweep of Quirks Mode implies text-shadow is supported by browsers that support rgba */
+  text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
+}
+
+/* Rotated text */
+#obstaclesDescription h3,
+#obstaclesDescription h4,
+#submitEntry span {
+  -webkit-transform: rotate(-8deg);
+  -moz-transform:    rotate(-8deg);
+  -ms-transform:     rotate(-8deg);
+  -o-transform:      rotate(-8deg);
+}
+
+/* TODO: Common-ize header heights and checkerboards */
+
 /* Specific classes */
 
 /* navBar specific */
@@ -185,7 +241,7 @@ input, select, option,
   top: 0;
   width: 100%;
 
-  background: #79b9ce;
+  background: #79B9CE;
   color: #000;
 
   text-align: center;
@@ -196,12 +252,8 @@ input, select, option,
 
 #navBar.translucent {
   /* Fallback for browsers without RGBa support */
-  background-color: rgb(15, 40, 48);
+  background-color: rgb(121, 185, 206);
   background-color: rgba(15, 40, 48, 0.05);
-  /* For IE 5.5 - 7*/
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0F28300C, endColorstr=#0F28300C);
-  /* For IE 8*/
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0F28300C, endColorstr=#0F28300C)";
 }
 
 #navBar a {
@@ -210,7 +262,6 @@ input, select, option,
   margin: 0 1.74em;
 }
 
-/* TODO: Deal with IE hover */
 #navBar a:hover {
   text-decoration: underline;
 }
@@ -240,11 +291,8 @@ input, select, option,
 }
 
 #topSection h2 {
-  /* TODO: Somehow get this to be more accurate */
   font-size: 2.8em;
   letter-spacing: .1em;
-  /* TODO: Support IE6 */
-  text-shadow: #FFF 1.74px 2.44px;
   margin-top: 40px;
 }
 
@@ -255,18 +303,13 @@ input, select, option,
 
 /* obstaclesSection specific */
 #obstaclesSection {
-  border-width: 7px 0;
-  border-style: solid;
   border-color: rgb(237, 88, 48);
   border-color: rgba(0, 0, 0, 0.06);
   padding: 44px 0 66px;
 }
 
 #obstaclesSection h2 {
-  color: #FEFEFE;
   font-size: 40px;
-  text-shadow: rgb(203, 82, 45) 2.90px 4.07px;
-  text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
   background: url('images/obstacles_checkerboard.png') top right no-repeat;
   margin-bottom: 57px;
 }
@@ -275,9 +318,6 @@ input, select, option,
   height: 220px;
   width: 220px;
   margin: 0 16px 16px 0;
-  border: 0px;
-  /* TODO: Multi-browser me */
-  border-radius: 5px;
 
   float: left;
 
@@ -294,7 +334,6 @@ input, select, option,
   margin-right: 0;
 }
 
-/* TODO: Try to do this better? */
 #theTank img {
   height: 152px;
   margin-top: 23px;
@@ -334,28 +373,16 @@ input, select, option,
 
 /*#obstaclesSection*/ #obstaclesDescription {
   text-align: center;
-  /* TODO: Text-drop shadow */
   position: relative;
   height: 692px; /* 220 * 3 + 16 * 2 */
 }
 
 #obstaclesDescription figcaption {
-  background: url('images/green_splat.png') top center no-repeat;
-  background-size: 236px;
-  /* TODO: Make a smaller image for IE7 */
+  background: url('images/green_splat_medium.png') top center no-repeat;
   height: 210px;
   width: 393px;
   margin-left: auto;
   margin-right: 24px;
-}
-
-#obstaclesDescription h3,
-#obstaclesDescription h4 {
-  -webkit-transform: rotate(-8deg);
-  -moz-transform:    rotate(-8deg);
-  -ms-transform:     rotate(-8deg);
-  -o-transform:      rotate(-8deg);
-  /* TODO: Text shadow */
 }
 
 #obstaclesDescription h3 {
@@ -363,7 +390,6 @@ input, select, option,
   line-height: 1.2em;
   padding-top: 1.4em;
   padding-bottom: 0.2em;
-  /* TODO: Make sure this works with each text combo */
 }
 
 #obstaclesDescription h4 {
@@ -375,12 +401,12 @@ input, select, option,
   position: absolute;
   bottom: 0;
   right: 40px;
-  /* TODO: Test robustly with each image */
 }
 
 /* prizesSection specific */
 #prizesSection {
-  /* TODO: Border Shadow */
+  border-color: rgb(120, 168, 53);
+  border-color: rgba(0, 0, 0, 0.06);
   padding-top: 63px;
   padding-bottom: 144px;
 }
@@ -388,8 +414,6 @@ input, select, option,
 /* TODO: Merge these checkerboard things */
 #prizesSection h2 {
   font-size: 40px;
-  /* TODO: Color text-shadow */
-  text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
   background: url('images/prizes_checkerboard.png') top right no-repeat;
   margin-bottom: 85px;
 }
@@ -434,13 +458,11 @@ input, select, option,
 #contestantSection {
   padding-top: 67px;
   padding-bottom: 116px;
-  /* TODO: Shadow */
+  border-bottom-width: 0;
 }
 
 #contestantSection h2 {
   font-size: 40px;
-  /* TODO: Color text-shadow */
-  text-shadow: rgba(0, 0, 0, 0.2) 2.90px 4.07px;
   background: url('images/contestant_checkerboard.png') top right no-repeat;
   margin-bottom: 85px;
 }
@@ -464,10 +486,6 @@ input, select, option,
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   margin-bottom: 16px;
-
-  /* TODO: Cross-browser border radius */
-  border: 0;
-  border-radius: 5px;
 }
 
 #contestantSection input,
@@ -501,10 +519,6 @@ input, select, option,
   position: absolute;
   top: 0;
   right: 0;
-
-  /* TODO: Cross-browser border radius */
-  border: 0;
-  border-radius: 5px;
 
   height: 50px;
   width: 50px;
@@ -550,20 +564,11 @@ input, select, option,
   margin: 0 auto;
   height: 154px;
   width: 227px;
-  background: transparent url('images/green_splat.png') top center no-repeat;
+  background: transparent url('images/green_splat_small.png') top center no-repeat;
   background-size: 170px;
   font-size: 1.5em;
   padding-bottom: 40px;
   cursor: pointer;
-  /* TODO: Create smaller splat for IE */
-}
-
-#submitEntry span {
-  -webkit-transform: rotate(-8deg);
-  -moz-transform:    rotate(-8deg);
-  -ms-transform:     rotate(-8deg);
-  -o-transform:      rotate(-8deg);
-  /* TODO: Text shadow */
 }
 
 #contestantSection aside {
@@ -581,7 +586,6 @@ input, select, option,
 
 #timerBlock figcaption {
   font-size: 2.4em;
-  /* TODO: Text shadow */
 }
 
 /* footerSection specific */
@@ -590,8 +594,7 @@ input, select, option,
 }
 
 #footerSection hr {
-  border: 4px solid rgb(117, 180, 200);
-  /* TODO: Opacity border */
+  border-width: 4px;
 }
 
 /*#footerSection*/ #knLogo {
