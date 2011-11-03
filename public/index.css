@@ -426,7 +426,7 @@ input, select, option,
 }
 
 #prizesSection h2 {
-  background-position: right top;
+  background-position: 179px top;
   margin-bottom: 85px;
 }
 
@@ -672,12 +672,21 @@ input, select, option,
     width: 100%;
   }
 
-  /* TODO: Checkerboard logic */
-  #obstaclesSection #obstaclesButtons {
+  /* Section headers */
+  #obstaclesSection h2,
+  #prizesSection h2,
+  #contestantSection h2 {
+    margin-left: .4em;
+  }
+
+  /* Obstacle section */
+  #obstaclesSection #obstaclesButtons,
+  #obstaclesSection #obstaclesDescription {
     width: 692px; /* 220 * 3 + 16 * 2 */
     float: none;
     text-align: center;
     margin: 0 auto;
+    height: auto;
   }
 
   #obstaclesButtons #sundaeSlide,
@@ -687,6 +696,88 @@ input, select, option,
 
   #obstaclesButtons #humanHamsterWheel {
     margin-right: 0;
+  }
+
+  /* Clearfix */
+  #obstaclesSection #obstaclesButtons:after {
+    content: " ";
+    clear: both;
+    display: block;
+    visibility: hidden;
+  }
+
+  #obstaclesDescription figcaption {
+    margin: 0;
+    float: left;
+  }
+
+  #obstaclesDescription img {
+    position: static;
+    height: 210px;
+    width: auto;
+
+    float: right;
+
+    margin-right: 20px;
+  }
+
+  /* Prizes section */
+  #prizesSection li {
+    width: 40%;
+    margin-left: 2em;
+  }
+  
+  #prizesSection #nashSkateboard,
+  #prizesSection #tvVcrCombo {
+    margin-left: 0;
+    margin-right: 2em;
+  }
+  
+  #prizesSection #tvVcrCombo {
+    left: 57%;
+  }
+
+  #prizesSection img {
+    width: 100%;
+    height: auto%;
+  }
+  
+  /* Contestant section */
+  #contestantSection form {
+    float: none;
+    width: 100%;
+  }
+  
+  #contestantSection fieldset {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  #contestantSection input,
+  #contestantSection select,
+  #contestantSection option,
+  #contestantSection #teamColor,
+  #contestantSection #gender {
+    width: 100%;
+  }
+  
+  #contestantSection #teamColorContainer {
+    width: 55%;
+  }
+  
+  #contestantSection #genderContainer {
+    width: 40%;
+  }
+  
+  #contestantSection aside {
+    display: none;
+  }
+}
+
+@media (max-width: 710px) {
+  /* TODO: Add prizes (2x3 once again and remove aside) */
+  #prizesSection ul {
+    height: 550px;
   }
 }
 
