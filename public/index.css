@@ -601,6 +601,7 @@ input, select, option,
 /* footerSection specific */
 #footerSection {
   text-align: center;
+  padding-bottom: 1em;
 }
 
 #footerSection hr {
@@ -648,7 +649,11 @@ input, select, option,
 }
 
 /*#footerSection*/ #creativeCommons {
-  line-height: 3em;
+  line-height: 1.3em;
+}
+
+#creativeCommons img {
+  margin-top: 2em;
 }
 
 #footerSection cite {
@@ -680,6 +685,7 @@ input, select, option,
   }
 
   /* Obstacle section */
+  /* TODO: Give Obstacles better UI for this size */
   #obstaclesSection #obstaclesButtons,
   #obstaclesSection #obstaclesDescription {
     width: 692px; /* 220 * 3 + 16 * 2 */
@@ -713,7 +719,7 @@ input, select, option,
 
   #obstaclesDescription img {
     position: static;
-    height: 210px;
+    height: 270px;
     width: auto;
 
     float: right;
@@ -726,13 +732,13 @@ input, select, option,
     width: 40%;
     margin-left: 2em;
   }
-  
+
   #prizesSection #nashSkateboard,
   #prizesSection #tvVcrCombo {
     margin-left: 0;
     margin-right: 2em;
   }
-  
+
   #prizesSection #tvVcrCombo {
     left: 57%;
   }
@@ -741,18 +747,18 @@ input, select, option,
     width: 100%;
     height: auto%;
   }
-  
+
   /* Contestant section */
   #contestantSection form {
     float: none;
     width: 100%;
   }
-  
+
   #contestantSection fieldset {
     width: 90%;
     margin: 0 auto;
   }
-  
+
   #contestantSection input,
   #contestantSection select,
   #contestantSection option,
@@ -760,61 +766,42 @@ input, select, option,
   #contestantSection #gender {
     width: 100%;
   }
-  
+
   #contestantSection #teamColorContainer {
     width: 55%;
   }
-  
+
   #contestantSection #genderContainer {
     width: 40%;
   }
-  
+
   #contestantSection aside {
     display: none;
   }
 }
 
 @media (max-width: 710px) {
-  /* TODO: Add prizes (2x3 once again and remove aside) */
-  #prizesSection ul {
-    height: 550px;
+  /* Obstacles section */
+  #obstaclesSection #obstaclesButtons {
+    width: 456px; /* 220 * 2 + 16 * 1 */
   }
-}
 
-@media (max-width: 469px) {
-  /* Obstacle section */
-  #obstaclesButtons {
-    width: 100%;
-    float: none;
+  #obstaclesButtons #sundaeSlide,
+  #obstaclesButtons #downTheHatch {
+    margin-right: 0;
+  }
+  #obstaclesButtons #humanHamsterWheel {
+    margin-right: 16px;
   }
 
   #obstaclesDescription {
     display: none;
   }
 
-  /* TODO: Prizes */
-
-  /* Contestant section */
-  #contestantSection #teamColor,
-  #contestantSection #gender {
-    width: 100%;
-    display: block;
-    float: none;
+  /* Prizes section */
+  #prizesSection ul {
+    height: 550px;
   }
-
-  #contestantSection form {
-    width: 100%;
-  }
-
-  #contestantSection fieldset {
-    padding: 0;
-  }
-
-  #contestantSection aside {
-    display: none;
-  }
-
-  /* TODO: Footer */
 }
 
 /* Nav bar width issues */
@@ -836,11 +823,6 @@ input, select, option,
 @media (max-width: 559px) {
   #topSection h1 {
     width: 100%;
-    /* This is what happens when not enough testing is done */
-    padding-left: 71px;
-  }
-  #topSection h1 img {
-    margin-left: -142px;
   }
 }
 
@@ -850,5 +832,75 @@ input, select, option,
   #prizesLink,
   #contestantLink {
     display: block;
+  }
+
+  /* Top section */
+  #topSection h1 img {
+    margin-left: 0;
+  }
+
+  /* Section header */
+  #obstaclesSection h2,
+  #prizesSection h2,
+  #contestantSection h2 {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    background-image: none;
+  }
+
+  /* Obstacle section */
+  #obstaclesSection #obstaclesButtons,
+  #obstaclesButtons li {
+    width: 100%;
+  }
+
+  #obstaclesButtons li {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+
+  /* Prizes section */
+  #prizesSection {
+    padding-bottom: 4em;
+  }
+
+  #prizesSection ul {
+    height: auto;
+  }
+
+  #prizesSection li,
+  #prizesSection #nashSkateboard,
+  #prizesSection #tvVcrCombo,
+  #prizesSection #casioKeyboard {
+    width: 100%;
+    margin: 0 0 4em;
+    float: none;
+    position: static;
+  }
+
+  #prizesSection img {
+    width: 90%;
+  }
+
+
+  /* Contestant section */
+  #contestantSection #teamColor,
+  #contestantSection #teamColorContainer,
+  #contestantSection #gender,
+  #contestantSection #genderContainer {
+    width: 100%;
+  }
+
+  /* Footer paragraphing */
+  #notAffiliated,
+  #contestantConsent {
+    margin: .8em 0 0;
+    text-align: center;
+    display: block;
+    float: none;
+    width: 100%;
+    font-size: .9em;
   }
 }
