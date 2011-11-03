@@ -94,7 +94,7 @@ body {
 
 /* Blue splat */
 #topSection {
-  background: url('images/blue_splat.png') center -207px no-repeat;
+  background: url('images/sheet.png') -81.5px -217px no-repeat;
 }
 
 /* Green background */
@@ -240,11 +240,9 @@ input, select, option,
 #obstaclesSection h2,
 #prizesSection h2,
 #contestantSection h2 {
-  background-image: url('images/yellow_checkerboard.png');
+  background-image: url('images/sheet.png');
   background-position: top right;
   background-repeat: no-repeat;
-
-    background-position: 280px top;
 }
 
 /* TODO: Rearrange these classes */
@@ -294,7 +292,7 @@ input, select, option,
 }
 
 #topSection h1 {
-  background: url('images/green_splat.png') center top no-repeat;
+  background: url('images/sheet.png') -10px -1143px no-repeat;
   height: 426px;
   width: 560px;
   margin: 0 auto;
@@ -325,7 +323,7 @@ input, select, option,
 }
 
 #obstaclesSection h2 {
-  background-position: 280px top;
+  background-position: 270px -2233px;
   margin-bottom: 57px;
 }
 
@@ -393,7 +391,7 @@ input, select, option,
 }
 
 #obstaclesDescription figcaption {
-  background: url('images/green_splat_medium.png') top center no-repeat;
+  background: url('images/sheet.png') 51px -2313px no-repeat;
   height: 210px;
   width: 393px;
   margin-left: auto;
@@ -426,7 +424,7 @@ input, select, option,
 }
 
 #prizesSection h2 {
-  background-position: 179px top;
+  background-position: 169px -2233px;
   margin-bottom: 85px;
 }
 
@@ -477,7 +475,7 @@ input, select, option,
 }
 
 #contestantSection h2 {
-  background-position: 420px bottom;
+  background-position: 410px -2253px;
   margin-bottom: 85px;
 }
 
@@ -536,14 +534,14 @@ input, select, option,
 
   height: 50px;
   width: 50px;
-  background: url('images/green_arrow.gif') 0 0 repeat;
+  background: url('images/sheet.png') -10px -1589px no-repeat;
 }
 
 #teamColor:hover + * + img,
 #teamColor:focus + * + img,
 #gender:hover + * + img,
 #gender:focus + * + img {
-  background-position: 0 50px;
+  background-position: -10px -1639px;
 }
 
 
@@ -578,9 +576,9 @@ input, select, option,
   margin: 0 auto;
   height: 154px;
   width: 227px;
-  background: transparent url('images/green_splat_small.png') top center no-repeat;
-  background-size: 170px;
+  background: url('images/sheet.png') 0 -1709px no-repeat;
   font-size: 1.5em;
+  padding-top: 20px;
   padding-bottom: 40px;
   cursor: pointer;
 }
@@ -590,7 +588,7 @@ input, select, option,
 }
 
 /*#contestantSection*/ #contestantTimer {
-  background: url('images/timer_backdrop.png') top center no-repeat;
+  background: url('images/sheet.png') -5px -1884px no-repeat;
   height: 236px; /* 329 - 93 */
   width: 386px;
   margin: 0 32px 32px auto; /* right = (470 - 386) / 2 - 10 */
@@ -609,7 +607,7 @@ input, select, option,
 }
 
 /*#footerSection*/ #knLogo {
-  background: url('images/kn_backdrop.png') top center no-repeat;
+  background: url('images/sheet.png') 393px -2539px no-repeat;
   height: 85px;
   margin-top: -55px;
   font-size: 3.4em;

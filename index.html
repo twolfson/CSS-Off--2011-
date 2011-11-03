@@ -16,21 +16,14 @@
 
   <title>Triple Dare - The Web's Messiest Challenge!</title>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:600" type="text/css" media="all" />
-  <!-- http://www.quirksmode.org/css/quirksmode.html -->
-  <!-- TODO: Compress and minify all CSS to one sheet -->
-  <!-- TODO: Same story for JS -->
-  <!-- TODO: Take only what you need from Normalize.css -->
 	<link rel="stylesheet" href="public/reset.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="public/index.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="public/debug.css" type="text/css" media="all" />
   <link rel="shortcut icon" href="public/images/favicon.ico" />
 
   <!-- TODO: TOP PRIORITY: Consolidate CSS classes and reduce image sizes -->
   <!-- TODO: TOP PRIORITY: Cross browser test -->
+  <!-- TODO: Combine css to one sheet -->
   <!-- TODO: Support IE6 -->
-
-  <!-- TODO: Remove from prod -->
-  <script src="public/reload_with_collector.js"></script>
 
   <!-- Minified library - http://www.iecss.com/print-protector/javascript/iepp.1-6-2.min.js -->
   <!--[if IE]>
@@ -44,7 +37,6 @@
     <a id="contestantLink" href="#contestantSection">Be a contestant</a>
     <a id="topLink" href="#topSection">Back to top</a>
   </nav>
-  <!-- TODO: Document media query large, medium, small, ultra small -->
   <header id="topSection">
     <div id="navBarPlaceholder">&nbsp;</div>
     <hgroup>
@@ -58,9 +50,6 @@
       <h2>Obstacles</h2>
     </header>
     <article>
-      <!-- TODO: Media query large: 3x2 vertical + aside -->
-      <!-- TODO: Media query small: 3x2 vertical, no aside -->
-      <!-- TODO: Media query ultra small: 6x1 vertical, no aside -->
       <ul id="obstaclesButtons">
         <li id="theTank">
           <figure>
@@ -112,9 +101,6 @@
       <h2>Prizes</h2>
     </header>
     <article>
-      <!-- TODO: Media query large: 2x2 normal -->
-      <!-- TODO: Media query small: 4x1 normal -->
-      <!-- TODO: Media query ultra small: 4x1 smaller images -->
       <ul id="prizes">
         <li id="spaceCamp" class="prize">
           <a href="http://www.spacecamp.com/" target="_blank">
@@ -156,9 +142,6 @@
       <h2>Be a Contestant</h2>
     </header>
     <article>
-      <!-- TODO: Media query large: Normal + aside -->
-      <!-- TODO: Media query small: Normal + no-aside -->
-      <!-- TODO: Media query ultra small: Line break for select boxes, everything else thinner + no-aside -->
       <form id="contestantForm" action="./index.html" method="get">
         <fieldset>
           <legend></legend>
@@ -189,9 +172,6 @@
       </aside>
     </article>
   </section>
-  <!-- TODO: Media query large: Normal -->
-  <!-- TODO: Media query small: Addresses and paragraphs center and break between -->
-  <!-- TODO: Media query ultra small: Same story as small -->
   <footer id="footerSection">
     <hr/>
     <div id="knLogo">KN</div>
