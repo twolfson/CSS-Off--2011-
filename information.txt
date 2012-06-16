@@ -1,9 +1,0 @@
-Complete the following:
-
-Name: Todd Wolfson
-Email Address: todd@twolfson.com
-Address: 740 Glencoe Ct, Sunnyvale, CA 94087
-
-Twitter (optional):
-
-Do not put any identifying information in your code!
